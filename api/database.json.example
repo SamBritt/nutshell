@@ -1,8 +1,2120 @@
 {
-  "users": [],
-  "messages": [],
-  "articles": [],
-  "friends": [],
-  "tasks": [],
-  "events": []
+  "users": [
+    {
+      "id": 1,
+      "userName": "",
+      "email": ""
+    }    
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "timeStamp": "",
+      "message": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "newsTitle": "",
+      "synopsis": "",
+      "timeStamp": "",
+      "url": ""
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "otherFriendId": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": "",
+      "task": "",
+      "completeDate": "",
+      "complete": true
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ]
 }
