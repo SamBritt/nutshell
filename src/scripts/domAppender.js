@@ -1,10 +1,7 @@
-import domStructure from "./domStructure"
-import fetch from "./APIcaller"
-import apiStructure from "./APIstructure"
+import domStructure from "./domStructure";
+import fetch from "./APIcaller";
+import apiStructure from "./APIstructure";
 
+const domAppender = {};
 
-const domAppender = {
-
-} 
-
-export default domAppender
+export default domAppender;
