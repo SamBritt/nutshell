@@ -4,12 +4,10 @@ import event from "./eventsAppender"
 
 
 
-
-
-
-DOM.nav.appendNav();
-
-
+//RunTheJewels();
 DOM.appendTaskForm();
 
+//Creates container for task elements to be displayed
+DOM.createTaskContainer();
+DOM.nav.appendNav();
 
