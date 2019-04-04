@@ -6,7 +6,7 @@ import build from "./constructors"
 
 const messages = {
 
-  //this pulls the data from the messages API and uses the structure built in the POSTtoDOM function to build the cards. It is used in the DOMappender to create the DOM for the message page. 
+  //this pulls the data from the messages API and uses the structure built in the POSTtoDOM function to build the cards. It is used in the DOMappender to create the DOM for the message page.
   listCards() {
     const formArticle = document.createElement("article");
     formArticle.classList.add("card-deck")
@@ -35,7 +35,7 @@ const messages = {
     return form;
 },
 
-//creates message object used turn API data into HTML. 
+//creates message object used turn API data into HTML.
 postToDOM (messageObject) {
   const messageTime = messageObject.timeStamp;
   const messageUser = messageObject.userID;
