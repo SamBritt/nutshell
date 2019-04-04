@@ -10,9 +10,9 @@ const APIstructure = {
             "synopsis": synopsis,
             "timeStamp": timeStamp,
             "url": url
-        },
+        }
         return articlesObject
-
+    },
     //Creates Task object to post to JSON server
     postTask(task, completeDate, complete) {
         let taskObject = {

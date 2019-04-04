@@ -4,7 +4,7 @@ import DOM from "./domAppender"
 
 const eventHandler = {
 
-    //Function to capture the values of data entered into the forms when the submit button is pressed. 
+    //Function to capture the values of data entered into the forms when the submit button is pressed.
     handleArticlesSubmit() {
         let articlesTitle = document.querySelector("#titleInputArticles")
         let articlesSynopsis = document.querySelector("#synopsisInputArticles")
