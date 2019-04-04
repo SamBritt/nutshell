@@ -57,8 +57,6 @@ const constructors = {
     }
     return htmlElement;
   },
-
-
   input(elementType, elementId, elementClass) {
     let inputElement = document.createElement("input");
     inputElement.type = elementType;
@@ -83,11 +81,11 @@ const constructors = {
   fieldset(labelText, inputType, page) {
     const formFieldSet = document.createElement("fieldset");
     formFieldSet.classList.add("form-group");
-
     formFieldSet.appendChild(
       this.elementWithText("label", `${labelText}: `)
     );
     formFieldSet.appendChild(this.input(inputType, `${page}InputForm`, "form-control"));
+
     return formFieldSet;
   }
 };

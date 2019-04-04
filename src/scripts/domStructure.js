@@ -1,6 +1,7 @@
 import build from "./constructors"
 import action from "./eventHandlerManager"
 
+
 const domStructure = {
 
   nav: {
@@ -47,7 +48,35 @@ const domStructure = {
     formSubmitButton.addEventListener("click", action.handleTaskSubmit);
     form.appendChild(formSubmitButton);
 
-    return section;
+
+    return form;
+  },
+  //This function builds the forms for the Articles component and will be appended to the DOM by the appendArticlesForm
+  //function in domAppender.js
+  buildArticlesForm() {
+    const form = build.elementWithTextCreator("form", undefined, "buildFormArticles", undefined);
+
+    const labelForTitle = build.elementWithTextCreator("label", "Enter Articles Title: ", undefined, undefined);
+    let inputTitle = build.inputCreator("text", "titleInputArticles");
+    form.appendChild(labelForTitle);
+    form.appendChild(inputTitle);
+
+    const labelForSynopsis = build.elementWithTextCreator("label", "Enter Articles Synopsis: ", undefined, undefined);
+    let inputSynopsis = build.inputCreator("text", "synopsisInputArticles");
+    form.appendChild(labelForSynopsis);
+    form.appendChild(inputSynopsis);
+
+    const labelForUrl = build.elementWithTextCreator("label", "Enter Articles URL: ", undefined, undefined);
+    let inputUrl = build.inputCreator("text", "urlInputArticles");
+    form.appendChild(labelForUrl);
+    form.appendChild(inputUrl);
+
+    let formSubmitButton = build.buttonCreator("submitFormArticles", "Submit Articles", undefined);
+    formSubmitButton.addEventListener("click", action.handleArticlesSubmit);
+    form.appendChild(formSubmitButton);
+
+    return form;
+
   },
   //Builds an HTML representation of key/values stored in JSON server.
   //Returns the section to be used in domAppender.js

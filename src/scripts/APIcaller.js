@@ -2,7 +2,7 @@ const apiBaseUrl = "http://localhost:8088"
 
 
 const API = {
-  getOne(endpoint, id) {
+  getOneEntry(endpoint, id) {
     return fetch(`${apiBaseUrl}/${endpoint}/${id}`).then(res => res.json());
   },
   getAll(endpoint) {

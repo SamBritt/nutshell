@@ -53,6 +53,12 @@ const domAppender = {
         let taskSection = document.querySelector("#tasks-section");
         taskSection.appendChild(domStructure.buildTaskForm());
     },
+
+    //Writes the form functions for the articles component to the DOM.
+    appendArticlesForm() {
+        let articlesSection = document.querySelector("#articles-section");
+        articlesSection.appendChild(domStructure.buildArticlesForm());
+},
     //Creates a container for DOM elements to be displayed
     createTaskContainer(){
         const taskSection = document.getElementById("tasks-section");
@@ -72,6 +78,7 @@ const domAppender = {
         this.clearElement(taskArticle);
 
         taskArticle.appendChild(docFrag);
+
     }
 
 };
