@@ -58,6 +58,7 @@ const constructors = {
     return htmlElement;
   },
 
+
   input(elementType, elementId, elementClass) {
     let inputElement = document.createElement("input");
     inputElement.type = elementType;
@@ -71,7 +72,7 @@ const constructors = {
   button(elementId, elementText, elementClass) {
     let button = document.createElement("button");
     button.id = elementId;
-    button.setAttribute("type", "submit");
+    button.setAttribute("type", "button");
     button.textContent = elementText;
     
     button.classList.add(elementClass);
@@ -82,6 +83,7 @@ const constructors = {
   fieldset(labelText, inputType, page) {
     const formFieldSet = document.createElement("fieldset");
     formFieldSet.classList.add("form-group");
+
     formFieldSet.appendChild(
       this.elementWithText("label", `${labelText}: `)
     );

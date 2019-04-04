@@ -4,4 +4,9 @@ import event from "./eventHandlerManager"
 
 
 
+
 DOM.nav.appendNav();
+
+
+DOM.appendTaskForm();
+

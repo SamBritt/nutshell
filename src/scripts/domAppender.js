@@ -43,7 +43,12 @@ const domAppender = {
     createDOM() {
       console.log("friends")
     }
-  }
+  },
+    appendTaskForm() {
+        let taskSection = document.querySelector("#tasks-section");
+        taskSection.appendChild(domStructure.buildTaskForm());
+    }
+
 };
 
 export default domAppender;
