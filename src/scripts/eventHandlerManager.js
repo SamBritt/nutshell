@@ -3,6 +3,7 @@ import build from "./APIstructure"
 import DOM from "./domAppender"
 
 const eventHandler = {
+
     //Function to capture the values of data entered into the forms when the submit button is pressed. 
     handleArticlesSubmit() {
         let articlesTitle = document.querySelector("#titleInputArticles")
@@ -15,6 +16,18 @@ const eventHandler = {
         fetch.postOne("articles", entryToPost)
     },
 
+    handleTaskSubmit(){
+        //Scrapes values of name/date inputs
+        //Converts to object using postTask in APIStructure
+        //Performs a POST request using that object.
+        //Retrieves updated list, then appends to DOM
+        let taskName = document.querySelector("#nameInputTask");
+        let taskDate = document.querySelector("#dateInputTask");
+
+
+        let entryToPost = build.postTask(taskName.value, taskDate.value, false);
+        fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
+    },
   //this uses event delegation to check for the navigation links, and if the click lands on a navlink, it uses the ID of the element to run the DOM Appender function for the specified page.
   handleNavigation() {
     if(!event.target.matches("a")) {
