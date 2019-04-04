@@ -1,4 +1,4 @@
-// This module is importing from eventsDomManager.js 
+// This module is importing from eventsDomManager.js
 import buildEventForm from "./eventsDomManager";
 
 const eventsAppender = {
