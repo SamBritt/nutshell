@@ -1,9 +1,11 @@
+// This module imports the functions in constructors.js and calls them to create the input form for new events.
 import buildHTML from "./constructors"
 // Object to export that holds functions as methods.
 const buildEventFormHTML = {
     // Function to build the HTML form
     buildEventButton() {
         const createEventsButton = buildHTML.buttonCreator("eventsButton", "Add New Event", undefined);
+        // Event listener console logs 'clicked' when clicked to demonstrate that it works. Event handler has yet to be added.
         createEventsButton.addEventListener("click", () => console.log("clicked"));
         return createEventsButton
     },
@@ -31,6 +33,7 @@ const buildEventFormHTML = {
     },
     eventSaveButton () {
         const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
+           // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
         createEventSaveButton.addEventListener("click", () => console.log("this will save your event"))
         return createEventSaveButton
     }

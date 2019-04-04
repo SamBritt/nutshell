@@ -1,11 +1,11 @@
-// import eventsHTML from "./eventsDomManager"
+// This module is importing from eventsDomManager.js 
 import buildEventForm from "./eventsDomManager";
-// import constructor from "../constructors"
 
 const eventsAppender = {
     appendEventForm() {
+        // Selects the container with the id of events-section and assigns it to the variable eventSection
         let eventSection = document.querySelector("#events-section");
-        console.log(eventSection)
+        // Appends the  add button, form and save button from eventsDomManager.js to the DOM
         eventSection.appendChild(buildEventForm.buildEventButton());
         eventSection.appendChild(buildEventForm.buildEventForm());
         eventSection.appendChild(buildEventForm.eventSaveButton());
