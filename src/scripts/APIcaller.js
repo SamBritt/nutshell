@@ -17,11 +17,11 @@ const API = {
       body: JSON.stringify(entry)
     });
   },
-  deleteEntry(endpoint, entryID) {
+  deleteEntry (endpoint, entryID ) {
     return fetch(`${apiBaseUrl}/${endpoint}/${entryID}`, {
-      method: "DELETE"
-    }).then(res => res.json());
-  }
+    method: "DELETE"
+  }).then(res => res.json());
+}
 };
 
 export default API
