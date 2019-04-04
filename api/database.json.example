@@ -2,51 +2,75 @@
   "users": [
     {
       "id": 1,
-      "userName": "",
-      "email": ""
+      "userName": "Brian",
+      "email": "greenskybluephish@gmail.com"
+    },
+    {
+      "id": 2,
+      "userName": "Billy",
+      "email": "greenbeer@gmail.com"
     }    
   ],
   "messages": [
     {
       "id": 1,
-      "userId": "",
-      "timeStamp": "",
-      "message": ""
+      "userId": "1",
+      "timeStamp": "dunno",
+      "message": "hello fellas"
+    },
+    {
+      "id": 2,
+      "userId": "2",
+      "timeStamp": "dunno",
+      "message": "hello ladies"
+    },
+    {
+      "id": 3,
+      "userId": "1",
+      "timeStamp": "dunno",
+      "message": "hello boys"
     }
   ],
   "articles": [
     {
       "id": 1,
-      "userId": "",
-      "newsTitle": "",
-      "synopsis": "",
+      "userId": "1",
+      "newsTitle": "some",
+      "synopsis": "impotant",
       "timeStamp": "",
-      "url": ""
+      "url": "www.time.com"
     }
   ],
   "friends": [
     {
       "id": 1,
-      "userId": "",
-      "otherFriendId": ""
+      "userId": "1",
+      "otherFriendId": "2"
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "userId": "",
-      "task": "",
-      "completeDate": "",
+      "userId": "1",
+      "task": "homework",
+      "completeDate": "2019-04-09",
       "complete": true
     }
   ],
   "events": [
     {
       "id": 1,
-      "userId": "",
-      "name": "",
-      "date": "",
-      "location": ""
+      "userId": "1",
+      "name": "Airshow Concert",
+      "date": "2019-04-09",
+      "location": "Mercy Lounge"
+    },
+    {
+      "id": 2,
+      "userId": "1",
+      "name": "Moe Concert",
+      "date": "2019-04-21",
+      "location": "Marathon Music Works"
     }
   ]
 }

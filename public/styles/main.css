@@ -1,0 +1,8 @@
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-nav li {
+  list-style-type: none;
+}
