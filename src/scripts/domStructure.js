@@ -1,4 +1,5 @@
 import build from "./constructors"
+import eventHandler from "./eventHandlerManager"
 
 const domStructure = {
   buildTaskFormButton() {
@@ -20,6 +21,30 @@ const domStructure = {
 
     let formSubmitButton = build.buttonCreator("submitFormTask", "Submit Task", undefined);
     formSubmitButton.addEventListener("click", () => console.log("Clicked that ish"));
+    form.appendChild(formSubmitButton);
+
+    return form;
+  },
+  buildArticlesForm() {
+    const form = build.elementWithTextCreator("form", undefined, "buildFormArticles", undefined);
+
+    const labelForTitle = build.elementWithTextCreator("label", "Enter Articles Title: ", undefined, undefined);
+    let inputTitle = build.inputCreator("text", "titleInputArticles");
+    form.appendChild(labelForTitle);
+    form.appendChild(inputTitle);
+
+    const labelForSynopsis = build.elementWithTextCreator("label", "Enter Articles Synopsis: ", undefined, undefined);
+    let inputSynopsis = build.inputCreator("text", "synopsisInputArticles");
+    form.appendChild(labelForSynopsis);
+    form.appendChild(inputSynopsis);
+
+    const labelForUrl = build.elementWithTextCreator("label", "Enter Articles URL: ", undefined, undefined);
+    let inputUrl = build.inputCreator("text", "urlInputArticles");
+    form.appendChild(labelForUrl);
+    form.appendChild(inputUrl);
+
+    let formSubmitButton = build.buttonCreator("submitFormArticles", "Submit Articles", undefined);
+    formSubmitButton.addEventListener("click", eventHandler.handleArticlesSubmit);
     form.appendChild(formSubmitButton);
 
     return form;

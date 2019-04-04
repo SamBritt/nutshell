@@ -1,6 +1,5 @@
 const constructors = {
-  //Creates an HTML element with values: type, textContent, id, and class
-  elementWithTextCreator(
+  elementWithText(
     elementType,
     elementTextContent,
     elementID,
@@ -16,7 +15,7 @@ const constructors = {
     }
     return htmlElement;
   },
-  //Creates an HTML element with values: type and id
+
   inputCreator(elementType, elementId, elementClass) {
     let inputElement = document.createElement("input");
     inputElement.type = elementType;
@@ -26,18 +25,19 @@ const constructors = {
     }
     return inputElement;
   },
-  //Creates an HTML button element with values: id, textContent, and class
+
   buttonCreator(elementId, elementText, elementClass) {
     let button = document.createElement("button");
     button.id = elementId;
-    button.setAttribute("type", "button");
+    button.setAttribute("type", "submit");
     button.textContent = elementText;
+    
     button.classList.add(elementClass);
     button.classList.add("btn", "btn-primary");
     return button;
   },
-  //Creates an HTML fieldset element with values: textContent, type and id
-  fieldsetCreator(labelText, inputType, page) {
+
+  fieldset(labelText, inputType, page) {
     const formFieldSet = document.createElement("fieldset");
     formFieldSet.classList.add("form-group");
     formFieldSet.appendChild(

@@ -1,8 +1,10 @@
 import API from "./APIcaller"
 import DOM from "./domAppender"
 import event from "./eventHandlerManager"
+import navBar from "./navbar"
 
+navBar.createNav();
 
 //RunTheJewels();
-DOM.appendTaskForm();
-DOM.appendArticlesForm()
+
+DOM.createFormDOM("task");

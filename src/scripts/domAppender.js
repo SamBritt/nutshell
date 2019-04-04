@@ -6,6 +6,10 @@ const domAppender = {
     appendTaskForm() {
         let taskSection = document.querySelector("#tasks-section");
         taskSection.appendChild(domStructure.buildTaskForm());
+    },
+    appendArticlesForm() {
+        let articlesSection = document.querySelector("#articles-section");
+        articlesSection.appendChild(domStructure.buildArticlesForm());
     }
 };
 
