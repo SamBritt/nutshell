@@ -4,6 +4,12 @@ import event from "./eventsAppender"
 
 
 
-//RunTheJewels();
+
+
+
+DOM.nav.appendNav();
+
+
 DOM.appendTaskForm();
-event.appendEventForm();
+
+
