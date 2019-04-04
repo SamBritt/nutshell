@@ -4,3 +4,4 @@ import event from "./eventHandlerManager"
 
 
 //RunTheJewels();
+DOM.appendTaskForm();
