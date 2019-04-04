@@ -25,6 +25,8 @@ const domStructure = {
 
     return form;
   },
+  //This function builds the forms for the Articles component and will be appended to the DOM by the appendArticlesForm
+  //function in domAppender.js
   buildArticlesForm() {
     const form = build.elementWithTextCreator("form", undefined, "buildFormArticles", undefined);
 
