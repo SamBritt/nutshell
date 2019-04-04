@@ -5,4 +5,5 @@ import event from "./eventHandlerManager"
 
 //RunTheJewels();
 DOM.appendTaskForm();
+//Creates container for task elements to be displayed
 DOM.createTaskContainer();

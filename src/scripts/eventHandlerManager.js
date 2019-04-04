@@ -4,6 +4,10 @@ import append from "./domAppender"
 
 const eventHandler = {
     handleTaskSubmit(){
+        //Scrapes values of name/date inputs
+        //Converts to object using postTask in APIStructure
+        //Performs a POST request using that object.
+        //Retrieves updated list, then appends to DOM
         let taskName = document.querySelector("#nameInputTask");
         let taskDate = document.querySelector("#dateInputTask");
 

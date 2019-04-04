@@ -13,12 +13,15 @@ const domAppender = {
         let taskSection = document.querySelector("#tasks-section");
         taskSection.appendChild(domStructure.buildTaskForm());
     },
+    //Creates a container for DOM elements to be displayed
     createTaskContainer(){
         const taskSection = document.getElementById("tasks-section");
         const article = constructor.elementWithTextCreator("article", undefined, "taskArticle")
         taskSection.appendChild(article);
 
     },
+    //Loops through task objects, creates HTML structure for each, then appends
+    //to DOM
     appendTasks(tasks) {
         let taskArticle = document.getElementById("taskArticle");
 
