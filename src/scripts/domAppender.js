@@ -21,7 +21,7 @@ const domAppender = {
     navBar.appendChild(domStructure.nav.createNavBar());
     }
   },
-  home: {
+  tasks: {
     createDOM() {
       console.log("home")
     }
@@ -43,7 +43,11 @@ const domAppender = {
   },
   events: {
     createDOM() {
-      event.appendEventForm();
+      
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(event.appendEventForm());
     }
   },
   messages: {
