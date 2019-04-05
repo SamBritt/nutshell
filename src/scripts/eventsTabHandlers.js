@@ -7,9 +7,19 @@ const eventsHandler = {
         let formSection = document.querySelector(".is--hidden")
         // Removes the class is--hidden from the element formSection
         formSection.classList.remove("is--hidden")
-        
+    },
+    saveEventHandler () {
+        let eventDisplay = document.querySelector("#events-container")
+        let eventName = document.querySelector("#newEvent").value;
+        let eventDate = document.querySelector("#newEventDate").value;
+        let eventLocation = document.querySelector("#eventLocation").value;
+        eventDisplay.appendChild(eventName)
+        eventDisplay.appendChild(eventDate)
+        eventDisplay.appendChild(eventLocation)
+        return eventDisplay
+
 
     }
 }
 
-export default eventsHandler
+export default eventsHandler 

@@ -34,7 +34,7 @@ const buildEventFormHTML = {
 
         const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
         // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
-        createEventSaveButton.addEventListener("click", () => console.log("this will save your event"))
+        createEventSaveButton.addEventListener("click", handlers.saveEventHandler)
         form.append(createEventSaveButton)
         return form
     },
