@@ -28,8 +28,18 @@ const domAppender = {
   },
   articles: {
     createDOM() {
-      console.log("articles")
-    }
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(this.appendArticlesForm());
+    },
+    //Writes the form functions for the articles component to the DOM.
+    appendArticlesForm() {
+      let articlesSection = document.createElement("section");
+      articlesSection.id = "articles-section"
+      articlesSection.appendChild(domStructure.buildArticlesForm());
+      return articlesSection
+},
   },
   events: {
     createDOM() {
@@ -61,11 +71,7 @@ const domAppender = {
         taskSection.appendChild(domStructure.buildTaskForm());
     },
 
-    //Writes the form functions for the articles component to the DOM.
-    appendArticlesForm() {
-        let articlesSection = document.querySelector("#articles-section");
-        articlesSection.appendChild(domStructure.buildArticlesForm());
-},
+    
     //Creates a container for DOM elements to be displayed
     createTaskContainer(){
         const taskSection = document.getElementById("tasks-section");

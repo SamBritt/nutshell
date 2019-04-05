@@ -7,5 +7,5 @@ import eventsAppender from "./eventsAppender";
 DOM.nav.appendNav();
 
 DOM.appendTaskForm();
-DOM.appendArticlesForm()
+
 
