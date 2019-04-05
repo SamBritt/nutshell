@@ -4,6 +4,7 @@ import apiStructure from "./APIstructure";
 import build from "./constructors";
 import messages from "./messages";
 import event from "./eventsAppender"
+import welcome from "./welcome"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
 
@@ -21,6 +22,36 @@ const domAppender = {
     navBar.appendChild(domStructure.nav.createNavBar());
     }
   },
+  home: {
+    createDOM() {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(build.elementWithText("div", "welcome"))
+    }
+
+
+  },
+  welcome: {
+    // this is the initial function to load the DOM. it checks the session storage to see if a user is currently logged in, and if so, loads the home page, otherwise, it directs to the login page.
+    createDOM() {
+      if (window.sessionStorage.getItem("userName")) {
+        domAppender.nav.appendNav();
+        domAppender.home.createDOM();
+      } else {
+        mainContainer.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
+      mainContainer.appendChild(welcome.loginForm());
+      mainContainer.appendChild(welcome.newUser());
+    }
+  },
+  createRegistration() {
+    while (mainContainer.firstChild) {
+      mainContainer.removeChild(mainContainer.firstChild);
+    };
+    mainContainer.appendChild(welcome.registerUser());
+  }
+
+},
   tasks: {
     createDOM() {
       console.log("home")

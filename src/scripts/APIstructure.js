@@ -31,6 +31,13 @@ const APIstructure = {
             "message": message,
         }
         return messageObject;
+    },
+    postUser(username, email) {
+        let userObject = {
+            "userName": username,
+            "email": email
+        }
+        return userObject;
     }
 }
 
