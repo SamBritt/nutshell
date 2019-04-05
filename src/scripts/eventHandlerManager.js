@@ -15,7 +15,10 @@ const eventHandler = {
 
     let entryToPost = build.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
     console.log(entryToPost)
-    fetch.postOne("articles", entryToPost)
+
+    fetch.postOne("articles", entryToPost).then(data => {
+      DOM.articles.reloadDOM()
+    })
   },
 
   handleTaskSubmit() {
@@ -68,6 +71,7 @@ const eventHandler = {
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })
+
   },
   handleLogin() {
     welcome.getUserList();
