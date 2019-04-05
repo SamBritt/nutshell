@@ -9,7 +9,6 @@ const eventsAppender = {
         // Appends the  add button, form and save button from eventsDomManager.js to the DOM
         eventSection.appendChild(buildEventForm.buildEventButton());
         eventSection.appendChild(buildEventForm.buildEventForm());
-        eventSection.appendChild(buildEventForm.eventSaveButton());
         return eventSection;
     }
 
