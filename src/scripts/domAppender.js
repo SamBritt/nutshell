@@ -21,7 +21,7 @@ const domAppender = {
     navBar.appendChild(domStructure.nav.createNavBar());
     }
   },
-  home: {
+  tasks: {
     createDOM() {
       console.log("home")
     }
