@@ -1,4 +1,6 @@
 import eventsHTML from "./eventsDomManager"
+import API from "./eventsAPIManager"
+import list from "./listEvents"
 
 const eventsHandler = {
     // Event handler to print new event form to the DOM
@@ -13,6 +15,18 @@ const eventsHandler = {
         let eventDate = document.querySelector("#newEventDate").value;
         let eventLocation = document.querySelector("#eventLocation").value;
         console.log(eventName, eventDate, eventLocation)
+
+        const newEvent = {
+                name: eventName,
+                date: eventDate,
+                location: eventLocation
+            }
+            API.postNewEvent(newEvent)
+
+            .then(list.listAllEvents())
+
+
+
     }
 }
 
