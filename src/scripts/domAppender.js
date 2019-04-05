@@ -33,7 +33,11 @@ const domAppender = {
   },
   events: {
     createDOM() {
-      event.appendEventForm();
+      
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(event.appendEventForm());
     }
   },
   messages: {
