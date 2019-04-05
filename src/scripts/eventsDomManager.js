@@ -6,7 +6,7 @@ const buildEventFormHTML = {
     // Function to build the HTML form
     buildEventButton() {
         const createEventsButton = buildHTML.buttonCreator("eventsButton", "Add New Event", undefined);
-        // Event listener console logs 'clicked' when clicked to demonstrate that it works. Event handler has yet to be added.
+        // Event listener removes the class is--hidden from the element and prints the form to the dom when clicked
         createEventsButton.addEventListener("click", handlers.addNewEventHandler);
         return createEventsButton
     },
