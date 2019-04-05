@@ -90,7 +90,9 @@ const domAppender = {
 
         let docFrag = document.createDocumentFragment();
         tasks.forEach(element => {
+          if(element.complete === false){
             docFrag.appendChild(domStructure.buildTaskComponent(element))
+          }
         });
         this.clearElement(taskArticle);
 

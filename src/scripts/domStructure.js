@@ -83,17 +83,33 @@ const domStructure = {
   buildTaskComponent(taskEntry){
     const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
-    let taskCheckbox = build.inputCreator("checkbox", `editTask--${taskEntry.id}`)
-    taskCheckbox.addEventListener("click", action.handleTaskEdit);
+    let taskCheckbox = build.inputCreator("checkbox", `taskChecked--${taskEntry.id}`)
+    taskCheckbox.addEventListener("click", action.handleTaskCheckbox);
     const dateDiv = build.elementWithTextCreator("div", `${taskEntry.completeDate}`);
     const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
-    
+    let taskEditButton = build.buttonCreator(`editTask--${taskEntry.id}`, "Edit");
+    taskEditButton.addEventListener("click", action.handleTaskEdit);
+
     nameH1.appendChild(taskCheckbox);
     section.appendChild(nameH1);
     section.appendChild(dateDiv);
     section.appendChild(completedDiv);
+    section.appendChild(taskEditButton)
 
     return section;
+  },
+  buildTaskEditForm(taskEntry){
+    let taskFrag = document.createDocumentFragment();
+
+    taskFrag.appendChild(build.elementWithTextCreator("label", "New Task Name: "))
+    taskFrag.appendChild(build.inputCreator("text", `editTaskName--${taskEntry.id}`))
+    taskFrag.appendChild(build.elementWithTextCreator("label", "New Deadline: "))
+    taskFrag.appendChild(build.inputCreator("text", `editTaskDate--${taskEntry.id}`))
+    let taskUpdateButton = build.buttonCreator(`updateTask--${taskEntry.id}`, "Update");
+    taskUpdateButton.addEventListener("click", action.handleTaskUpdate)
+    taskFrag.appendChild(taskUpdateButton);
+    
+    return taskFrag;
   }
 
 }
