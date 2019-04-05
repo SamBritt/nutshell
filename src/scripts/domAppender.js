@@ -3,8 +3,11 @@ import fetch from "./APIcaller";
 import apiStructure from "./APIstructure";
 import build from "./constructors";
 import messages from "./messages";
+import event from "./eventsAppender"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
+
+const mainContainer = document.querySelector("#main-container");
 
 const domAppender = {
     clearElement(domElement) {
@@ -25,22 +28,36 @@ const domAppender = {
   },
   articles: {
     createDOM() {
-      console.log("articles")
-    }
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(this.appendArticlesForm());
+    },
+    //Writes the form functions for the articles component to the DOM.
+    appendArticlesForm() {
+      let articlesSection = document.createElement("section");
+      articlesSection.id = "articles-section"
+      articlesSection.appendChild(domStructure.buildArticlesForm());
+      return articlesSection
+},
   },
   events: {
     createDOM() {
-      console.log("events")
+      event.appendEventForm();
     }
   },
   messages: {
     createDOM() {
-      console.log("messages")
-      const mainContainer = document.querySelector("#main-container");
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
       mainContainer.appendChild(messages.buildForm());
+      mainContainer.appendChild(messages.listCards());
+    },
+    reloadDOM() {
+      while (mainContainer.childNodes[1]) {
+        mainContainer.removeChild(mainContainer.childNodes[1]);
+      };
       mainContainer.appendChild(messages.listCards());
     }
   },
@@ -54,11 +71,7 @@ const domAppender = {
         taskSection.appendChild(domStructure.buildTaskForm());
     },
 
-    //Writes the form functions for the articles component to the DOM.
-    appendArticlesForm() {
-        let articlesSection = document.querySelector("#articles-section");
-        articlesSection.appendChild(domStructure.buildArticlesForm());
-},
+    
     //Creates a container for DOM elements to be displayed
     createTaskContainer(){
         const taskSection = document.getElementById("tasks-section");
