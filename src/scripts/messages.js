@@ -27,7 +27,7 @@ const messages = {
 
     form.appendChild(build.fieldset("Enter a message", "text", "message"));
 
-    let formSubmitButton = build.button("submitFormTask", "Submit Task", "saveButton");
+    let formSubmitButton = build.button("postMessageButton", "Post Message", "saveButton");
     formSubmitButton.addEventListener("click", action.handleMessageSubmit);
     form.appendChild(formSubmitButton);
 
