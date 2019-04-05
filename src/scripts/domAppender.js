@@ -4,6 +4,7 @@ import apiStructure from "./APIstructure";
 import build from "./constructors";
 import messages from "./messages";
 import event from "./eventsAppender"
+import welcome from "./welcome"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
 
@@ -21,6 +22,26 @@ const domAppender = {
     navBar.appendChild(domStructure.nav.createNavBar());
     }
   },
+  home: {
+    createDOM() {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(build.elementWithText("div", "welcome"))
+    }
+
+
+  },
+  welcome: {
+    createDOM() {
+      if (window.sessionStorage.getItem("userName")) {
+        domAppender.nav.appendNav();
+        domAppender.home.createDOM();
+      } else {
+      mainContainer.appendChild(welcome.loginPage());
+    }
+  }
+},
   tasks: {
     createDOM() {
       console.log("home")
