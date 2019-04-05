@@ -24,7 +24,7 @@ const welcome = {
         form.appendChild(newUserButton);
         return form;
     },
-    //this function is used by the login button event handler, it fetches the user database and checks the login values against current users. If there is a match, it directs to the home page, otherwise it sends an error alert.  
+    //this function is used by the login button event handler, it fetches the user database and checks the login values against current users. If there is a match, it directs to the home page, otherwise it sends an error alert.
     getUserList() {
       fetch.getAll("users").then(usersArray => {
         let userName = document.querySelector("#usernameInputForm").value;
