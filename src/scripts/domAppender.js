@@ -39,9 +39,18 @@ const domAppender = {
         domAppender.nav.appendNav();
         domAppender.home.createDOM();
       } else {
-      mainContainer.appendChild(welcome.loginPage());
+        mainContainer.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
+      mainContainer.appendChild(welcome.loginForm());
+      mainContainer.appendChild(welcome.newUser());
     }
+  },
+  createRegistration() {
+    while (mainContainer.firstChild) {
+      mainContainer.removeChild(mainContainer.firstChild);
+    };
+    mainContainer.appendChild(welcome.registerUser());
   }
+
 },
   tasks: {
     createDOM() {

@@ -61,10 +61,7 @@ const eventHandler = {
     console.log(event.target.id)
   },
   handleMessageSubmit() {
-    //Scrapes values of name/date inputs
-    //Converts to object using postTask in APIStructure
-    //Performs a POST request using that object.
-    //Retrieves updated list, then appends to DOM
+
     let messageName = document.querySelector("#messageInputForm");
 
     let entryToPost = build.postMessage(messageName.value);
@@ -76,9 +73,11 @@ const eventHandler = {
     welcome.getUserList();
   },
   handleNewUser() {
-    console.log("new user")
+    DOM.welcome.createRegistration();
+  },
+  handleRegister() {
+    welcome.createNewUser();
   }
-
 }
 
 export default eventHandler

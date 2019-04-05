@@ -4,12 +4,13 @@ import apiStructure from "./APIstructure";
 import build from "./constructors";
 import action from "./eventHandlerManager"
 import domAppender from "./domAppender"
+import APIstructure from "./APIstructure";
 
 const welcome = {
 
   //this function builds the login form and the buttons for logging in as well as registering
-    loginPage () {
-        const form = build.elementWithText("form", "", "loginForm");
+    loginForm () {
+        const form = build.elementWithText("form", "Have an account?", "loginForm");
         form.appendChild(build.elementWithText("legend", "Log in to Nushell"));
         form.appendChild(build.fieldset("Enter username", "text", "username"));
         form.appendChild(build.fieldset("Enter Email Address", "text", "email"));
@@ -18,11 +19,14 @@ const welcome = {
         loginButton.addEventListener("click", action.handleLogin);
         form.appendChild(loginButton);
         
-        let newUserButton = build.button("newUserButton","New user?", "button");
-
-        newUserButton.addEventListener("click", action.handleNewUser);
-        form.appendChild(newUserButton);
         return form;
+    },
+    newUser() {
+      const newUserSection  = build.elementWithText("section", "New to Nutshell?")
+      let newUserButton = build.button("newUserButton","Sign Up", "button");
+      newUserButton.addEventListener("click", action.handleNewUser);
+      newUserSection.appendChild(newUserButton);
+      return newUserSection;
     },
     //this function is used by the login button event handler, it fetches the user database and checks the login values against current users. If there is a match, it directs to the home page, otherwise it sends an error alert.
     getUserList() {
@@ -41,7 +45,28 @@ const welcome = {
           }
         
       })
-    }
+    },
+    registerUser() {
+        const form = build.elementWithText("form", "Welcome to nutshell", "registrationForm");
+        form.appendChild(build.elementWithText("legend", "Create new account:"));
+        form.appendChild(build.fieldset("Enter username", "text", "username"));
+        form.appendChild(build.fieldset("Enter Email Address", "text", "email"));
+
+        let registerButton = build.button("registerButton","Submit", "button");
+        registerButton.addEventListener("click", action.handleRegister);
+        form.appendChild(registerButton);
+        
+        return form;
+    },
+    createNewUser() {
+      let userName = document.querySelector("#usernameInputForm").value;
+      let email = document.querySelector("#emailInputForm").value;
+      let newUser = apiStructure.postUser(userName, email);
+      fetch.postOne("users", newUser).then(data => {
+        window.sessionStorage.setItem("userName", userName);
+        domAppender.nav.appendNav();
+        domAppender.home.createDOM();
+      })}
 
 }
 
