@@ -1,16 +1,18 @@
 // This module imports the functions in constructors.js and calls them to create the input form for new events.
 import buildHTML from "./constructors"
+import handlers from "./eventsTabHandlers"
 // Object to export that holds functions as methods.
 const buildEventFormHTML = {
     // Function to build the HTML form
     buildEventButton() {
         const createEventsButton = buildHTML.buttonCreator("eventsButton", "Add New Event", undefined);
         // Event listener console logs 'clicked' when clicked to demonstrate that it works. Event handler has yet to be added.
-        createEventsButton.addEventListener("click", () => console.log("wow what a dream"));
+        createEventsButton.addEventListener("click", handlers.addNewEventHandler);
         return createEventsButton
     },
     buildEventForm() {
         const form = buildHTML.elementWithTextCreator("form", undefined, "buildFormEvent", undefined);
+        form.className = "is--hidden"
 
         const createEventLabel = buildHTML.elementWithTextCreator("label", "Event Name: ", undefined, undefined);
         console.log(createEventLabel)
@@ -29,14 +31,14 @@ const buildEventFormHTML = {
 
         const eventLocationInput = buildHTML.inputCreator("text", "eventLocation");
         form.append(eventLocationInput)
+
+        const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
+        // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
+        createEventSaveButton.addEventListener("click", () => console.log("this will save your event"))
+        form.append(createEventSaveButton)
         return form
     },
-    eventSaveButton () {
-        const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
-           // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
-        createEventSaveButton.addEventListener("click", () => console.log("this will save your event"))
-        return createEventSaveButton
-    }
+
 
 
 
