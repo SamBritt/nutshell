@@ -7,6 +7,8 @@ import event from "./eventsAppender"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
 
+const mainContainer = document.querySelector("#main-container");
+
 const domAppender = {
     clearElement(domElement) {
         while (domElement.firstChild) {
@@ -36,12 +38,16 @@ const domAppender = {
   },
   messages: {
     createDOM() {
-      console.log("messages")
-      const mainContainer = document.querySelector("#main-container");
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
       mainContainer.appendChild(messages.buildForm());
+      mainContainer.appendChild(messages.listCards());
+    },
+    reloadDOM() {
+      while (mainContainer.childNodes[1]) {
+        mainContainer.removeChild(mainContainer.childNodes[1]);
+      };
       mainContainer.appendChild(messages.listCards());
     }
   },
