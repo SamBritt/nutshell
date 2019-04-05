@@ -33,6 +33,7 @@ const domAppender = {
 
   },
   welcome: {
+    // this is the initial function to load the DOM. it checks the session storage to see if a user is currently logged in, and if so, loads the home page, otherwise, it directs to the login page. 
     createDOM() {
       if (window.sessionStorage.getItem("userName")) {
         domAppender.nav.appendNav();

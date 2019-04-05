@@ -6,6 +6,8 @@ import action from "./eventHandlerManager"
 import domAppender from "./domAppender"
 
 const welcome = {
+
+  //this function builds the login form and the buttons for logging in as well as registering
     loginPage () {
         const form = build.elementWithText("form", "", "loginForm");
         form.appendChild(build.elementWithText("legend", "Log in to Nushell"));
@@ -22,6 +24,7 @@ const welcome = {
         form.appendChild(newUserButton);
         return form;
     },
+    //this function is used by the login button event handler, it fetches the user database and checks the login values against current users. If there is a match, it directs to the home page, otherwise it sends an error alert.  
     getUserList() {
       fetch.getAll("users").then(usersArray => {
         let userName = document.querySelector("#usernameInputForm").value;
