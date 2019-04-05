@@ -17,11 +17,20 @@ const API = {
       body: JSON.stringify(entry)
     });
   },
-  deleteEntry (endpoint, entryID ) {
+  deleteEntry(endpoint, entryID) {
     return fetch(`${apiBaseUrl}/${endpoint}/${entryID}`, {
-    method: "DELETE"
-  }).then(res => res.json());
-}
+      method: "DELETE"
+    }).then(res => res.json());
+  },
+  patchEntry(endpoint, entryID, entry){
+    return fetch(`${apiBaseUrl}/${endpoint}/${entryID}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
+    })
+  }
 };
 
 export default API

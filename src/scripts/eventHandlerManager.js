@@ -28,6 +28,12 @@ const eventHandler = {
         let entryToPost = build.postTask(taskName.value, taskDate.value, false);
         fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
     },
+    handleTaskEdit(){
+      console.log("hey");
+    },
+    handleTaskUpdate(){
+      
+    },
   //this uses event delegation to check for the navigation links, and if the click lands on a navlink, it uses the ID of the element to run the DOM Appender function for the specified page.
   handleNavigation() {
     if(!event.target.matches("a")) {
