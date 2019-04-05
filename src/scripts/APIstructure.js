@@ -23,6 +23,14 @@ const APIstructure = {
         }
         return taskObject;
 
+    },
+    postMessage(message) {
+        let messageObject = {
+            "userId": 1,
+            "timestamp": "test",
+            "message": message,
+        }
+        return messageObject;
     }
 }
 

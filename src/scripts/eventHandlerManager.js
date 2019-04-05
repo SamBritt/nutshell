@@ -50,7 +50,18 @@ const eventHandler = {
   //not used yet
   handleEditButton() {
     console.log(event.target.id)
-  }
+  },
+  handleMessageSubmit() {
+    //Scrapes values of name/date inputs
+    //Converts to object using postTask in APIStructure
+    //Performs a POST request using that object.
+    //Retrieves updated list, then appends to DOM
+    let messageName = document.querySelector("#messageInputForm");
+
+    let entryToPost = build.postMessage(messageName.value);
+    fetch.postOne("messages", entryToPost).then(data => {
+      DOM.messages.reloadDOM()
+})}
 }
 
 export default eventHandler

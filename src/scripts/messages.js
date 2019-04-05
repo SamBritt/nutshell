@@ -25,11 +25,10 @@ const messages = {
     buildForm() {
     const form = build.elementWithText("form", "", "buildTaskForm", "inputForm");
 
-    form.appendChild(build.fieldset("Enter a message", "text", "taskName"));
-    form.appendChild(build.fieldset("Enter Completion Date", "date", "taskDate"));
+    form.appendChild(build.fieldset("Enter a message", "text", "message"));
 
     let formSubmitButton = build.button("submitFormTask", "Submit Task", "saveButton");
-    formSubmitButton.addEventListener("click", () => console.log("Clicked that ish"));
+    formSubmitButton.addEventListener("click", action.handleMessageSubmit);
     form.appendChild(formSubmitButton);
 
     return form;
@@ -59,7 +58,7 @@ postToDOM (messageObject) {
   buildDIV.appendChild(editButton);
 
   return buildDIV;
-  
+
 }
 }
 
