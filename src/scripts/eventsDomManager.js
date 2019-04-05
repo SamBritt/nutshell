@@ -6,7 +6,7 @@ const buildEventFormHTML = {
     buildEventButton() {
         const createEventsButton = buildHTML.buttonCreator("eventsButton", "Add New Event", undefined);
         // Event listener console logs 'clicked' when clicked to demonstrate that it works. Event handler has yet to be added.
-        createEventsButton.addEventListener("click", addNewEventHandler);
+        createEventsButton.addEventListener("click", () => console.log("wow what a dream"));
         return createEventsButton
     },
     buildEventForm() {
