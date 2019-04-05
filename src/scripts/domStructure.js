@@ -83,9 +83,12 @@ const domStructure = {
   buildTaskComponent(taskEntry){
     const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
+    let taskCheckbox = build.inputCreator("checkbox", `editTask--${taskEntry.id}`)
+    taskCheckbox.addEventListener("click", action.handleTaskEdit);
     const dateDiv = build.elementWithTextCreator("div", `${taskEntry.completeDate}`);
     const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
-
+    
+    nameH1.appendChild(taskCheckbox);
     section.appendChild(nameH1);
     section.appendChild(dateDiv);
     section.appendChild(completedDiv);

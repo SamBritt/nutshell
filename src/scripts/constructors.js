@@ -9,7 +9,7 @@ const constructors = {
       let htmlElement = document.createElement(elementType);
       htmlElement.textContent = elementTextContent;
       if (elementID) {
-        htmlElement.id = elementClass;
+        htmlElement.id = elementID;
       }
       if (elementClass) {
         htmlElement.classList.add(elementClass);
