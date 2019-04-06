@@ -115,11 +115,11 @@ const domAppender = {
       buildDIV.appendChild(build.elementWithText("p", articlesUrl));
       buildDIV.appendChild(build.elementWithText("p", articlesTime));
 
-      const deleteButton = build.button(`delete--${articlesID}`, "Delete Articles", "deleteButton");
+      const deleteButton = build.button(`delete--${articlesID}`, "Delete Articles", "button");
       deleteButton.addEventListener("click", eventHandler.handleDeleteButton);
       buildDIV.appendChild(deleteButton);
 
-      const editButton = build.button(`edit--${articlesID}`, "Edit Entry", "editButton");
+      const editButton = build.button(`edit--${articlesID}`, "Edit Entry", "button");
       editButton.addEventListener("click", eventHandler.handleEditButton);
       buildDIV.appendChild(editButton);
 
