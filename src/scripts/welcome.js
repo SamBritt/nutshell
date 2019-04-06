@@ -11,7 +11,7 @@ const welcome = {
   //this function builds the login form and the buttons for logging in as well as registering
     loginForm () {
         const form = build.elementWithText("form", "Have an account?", "loginForm");
-        form.appendChild(build.elementWithText("legend", "Log in to Nushell"));
+        form.appendChild(build.elementWithText("legend", "Log in to NutsHell:"));
         form.appendChild(build.fieldset("Enter username", "text", "username"));
         form.appendChild(build.fieldset("Enter Email Address", "text", "email"));
 
@@ -22,7 +22,7 @@ const welcome = {
         return form;
     },
     newUser() {
-      const newUserSection  = build.elementWithText("section", "New to Nutshell?")
+      const newUserSection  = build.elementWithText("section", "New to Nutshell?", "register-section")
       let newUserButton = build.button("newUserButton","Sign Up", "button");
       newUserButton.addEventListener("click", action.handleNewUser);
       newUserSection.appendChild(newUserButton);
@@ -47,7 +47,7 @@ const welcome = {
       })
     },
     registerUser() {
-        const form = build.elementWithText("form", "Welcome to nutshell", "registrationForm");
+        const form = build.elementWithText("form", "Welcome to Nutshell", "registrationForm");
         form.appendChild(build.elementWithText("legend", "Create new account:"));
         form.appendChild(build.fieldset("Enter username", "text", "username"));
         form.appendChild(build.fieldset("Enter Email Address", "text", "email"));

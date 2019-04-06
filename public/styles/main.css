@@ -1,12 +1,88 @@
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
 ul {
   display: flex;
   justify-content: space-evenly;
+
 }
 
 .navbar-nav li {
   list-style-type: none;
+
 }
 
 .is--hidden {
   display: none;
+}
+
+nav {
+  background-color: #29335C;
+  padding: 15px;
+
+}
+
+a {
+  text-decoration-line: none;
+  font-size: 24px;
+  text-transform: capitalize;
+  color:#C2C1C2;
+  padding: 0 3px;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+.active {
+  font-weight: bold;
+}
+
+#main-container {
+  display: flex;
+}
+
+.card-deck {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px 5%;
+
+}
+
+.card {
+  background-color: #C7DAE6;
+  border: 1px solid #29335C;
+  padding: 10px;
+  margin: 10px;
+  min-width: 400px;
+  flex-grow: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 15px;
+  border: 3px solid lightslategray;
+  height: min-content;
+  
+}
+
+fieldset {
+  border: none;
+}
+
+#welcomeHeader {
+  padding-left: 20px;
+}
+
+#register-section {
+  padding: 10px;
+}
+
+button {
+  margin: 5px;
 }

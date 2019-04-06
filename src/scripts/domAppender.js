@@ -29,7 +29,10 @@ const domAppender = {
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
-      mainContainer.appendChild(build.elementWithText("div", "welcome"))
+      const home = document.querySelector("#nav--home");
+      home.classList.add("active");
+      mainContainer.appendChild(build.elementWithText("h1", `Welcome ${window.sessionStorage.getItem("userName")} `,"welcomeHeader"))
+
     }
 
 
@@ -41,9 +44,11 @@ const domAppender = {
         domAppender.nav.appendNav();
         domAppender.home.createDOM();
       } else {
-        mainContainer.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
-      mainContainer.appendChild(welcome.loginForm());
-      mainContainer.appendChild(welcome.newUser());
+        let welcomePage = document.createElement("article");
+        welcomePage.appendChild(build.elementWithText("h1", "Welcome to NutsHell"));
+      welcomePage.appendChild(welcome.loginForm());
+      welcomePage.appendChild(welcome.newUser());
+      mainContainer.appendChild(welcomePage)
     }
   },
   createRegistration() {

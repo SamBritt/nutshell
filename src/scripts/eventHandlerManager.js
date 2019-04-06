@@ -46,7 +46,10 @@ const eventHandler = {
     }
 
     let page = event.target.id.split("--")[1];
-
+    let target = event.target;
+    let activeNav = document.querySelector(".active");
+    activeNav.classList.remove("active");
+    target.classList.add("active")
     DOM[page].createDOM()
   },
   //this uses dynamic targeting to reference the ID and page of the card to be deleted. It then reloads the DOM with an updated version of the page.
