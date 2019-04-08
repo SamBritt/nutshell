@@ -5,7 +5,7 @@ import action from "./eventHandlerManager"
 const domStructure = {
 
   nav: {
-    createNavItem (page) {
+    createNavItem(page) {
       const navItem = build.elementWithText("li", "", null, "nav-item")
       const navLink = build.elementWithText("a", page, `nav--${page}`, "nav-link");
       navLink.setAttribute("href", "#");
@@ -13,8 +13,9 @@ const domStructure = {
       return navItem;
     },
     createNavBar() {
-      
+
       const navList = build.elementWithText("ul", "", null, "navbar-nav");
+      navList.appendChild(this.createNavItem("home"));
       navList.appendChild(this.createNavItem("tasks"));
       navList.appendChild(this.createNavItem("articles"));
       navList.appendChild(this.createNavItem("events"));
@@ -24,7 +25,7 @@ const domStructure = {
       return navList;
     }
   },
-    
+
   buildTaskFormButton() {
     let createTaskButton = build.buttonCreator("taskButtonTask", "Create New Task", undefined);
     createTaskButton.addEventListener("click", () => console.log("Clicked!"));
@@ -80,10 +81,10 @@ const domStructure = {
   },
   //Builds an HTML representation of key/values stored in JSON server.
   //Returns the section to be used in domAppender.js
-  buildTaskComponent(taskEntry){
+  buildTaskComponent(taskEntry) {
     const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
-    let taskCheckbox = build.inputCreator("checkbox", `taskChecked--${taskEntry.id}`)
+    let taskCheckbox = build.inputCreator("checkbox", `editTask--${taskEntry.id}`)
     taskCheckbox.addEventListener("click", action.handleTaskCheckbox);
     const dateDiv = build.elementWithTextCreator("div", `${taskEntry.completeDate}`);
     const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
@@ -98,7 +99,7 @@ const domStructure = {
 
     return section;
   },
-  buildTaskEditForm(taskEntry){
+  buildTaskEditForm(taskEntry) {
     let taskFrag = document.createDocumentFragment();
 
     taskFrag.appendChild(build.elementWithTextCreator("label", "New Task Name: "))
@@ -108,7 +109,7 @@ const domStructure = {
     let taskUpdateButton = build.buttonCreator(`updateTask--${taskEntry.id}`, "Update");
     taskUpdateButton.addEventListener("click", action.handleTaskUpdate)
     taskFrag.appendChild(taskUpdateButton);
-    
+
     return taskFrag;
   }
 

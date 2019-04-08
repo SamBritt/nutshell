@@ -1,8 +1,8 @@
 import fetch from "./APIcaller"
-import build from "./APIstructure"
+import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
-import domAppender from "./domAppender";
 import struct from "./domStructure";
+import welcome from "./welcome";
 
 const eventHandler = {
 
@@ -13,22 +13,24 @@ const eventHandler = {
     let articlesTimeStamp = "test"
     let articlesUrl = document.querySelector("#urlInputArticles")
 
-    let entryToPost = build.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
+    let entryToPost = apiStructure.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
     console.log(entryToPost)
-    fetch.postOne("articles", entryToPost)
+
+    fetch.postOne("articles", entryToPost).then(data => {
+      DOM.articles.reloadDOM()
+    })
   },
 
   handleTaskSubmit() {
     //Scrapes values of name/date inputs
-    //Converts to object using postTask in APIStructure
+    //Converts to object using postTask in apiStructure
     //Performs a POST request using that object.
     //Retrieves updated list, then appends to DOM
     let taskName = document.querySelector("#nameInputTask");
     let taskDate = document.querySelector("#dateInputTask");
 
-
-    let entryToPost = build.postTask(taskName.value, taskDate.value, false);
-    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
+    let entryToPost = apiStructure.postTask(taskName.value, taskDate.value, false);
+    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
   },
   handleTaskCheckbox() {
     let checkBoxId = event.target.id.split("--")[1];
@@ -36,7 +38,7 @@ const eventHandler = {
     let patchedTask = {
       "complete": true
     }
-    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response));
+    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response));
     console.log("Clicked")
   },
   handleTaskEdit() {
@@ -44,7 +46,7 @@ const eventHandler = {
     console.log(taskTargetId);
 
     let taskSection = document.querySelector(`#taskSection--${taskTargetId}`);
-    domAppender.clearElement(taskSection);
+    DOM.clearElement(taskSection);
     fetch.getOneEntry("tasks", taskTargetId).then(taskToEdit => {
       const editForm = struct.buildTaskEditForm(taskToEdit);
       taskSection.appendChild(editForm)
@@ -60,7 +62,10 @@ const eventHandler = {
     }
 
     let page = event.target.id.split("--")[1];
-
+    let target = event.target;
+    let activeNav = document.querySelector(".active");
+    activeNav.classList.remove("active");
+    target.classList.add("active")
     DOM[page].createDOM()
   },
   //this uses dynamic targeting to reference the ID and page of the card to be deleted. It then reloads the DOM with an updated version of the page.
@@ -78,16 +83,22 @@ const eventHandler = {
     console.log("clicked");
   },
   handleMessageSubmit() {
-    //Scrapes values of name/date inputs
-    //Converts to object using postTask in APIStructure
-    //Performs a POST request using that object.
-    //Retrieves updated list, then appends to DOM
+
     let messageName = document.querySelector("#messageInputForm");
 
-    let entryToPost = build.postMessage(messageName.value);
+    let entryToPost = apiStructure.postMessage(messageName.value);
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })
+  },
+  handleLogin() {
+    welcome.getUserList();
+  },
+  handleNewUser() {
+    DOM.welcome.createRegistration();
+  },
+  handleRegister() {
+    welcome.createNewUser();
   }
 }
 

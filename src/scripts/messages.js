@@ -49,11 +49,11 @@ postToDOM (messageObject) {
 
   buildDIV.appendChild(build.elementWithText("p", messageText));
 
-  const deleteButton = build.button(`delete--${messageID}`, "Delete message", "deleteButton");
+  const deleteButton = build.button(`delete--${messageID}`, "Delete message", "button");
   deleteButton.addEventListener("click", action.handleDeleteButton);
  buildDIV.appendChild(deleteButton);
 
-  const editButton = build.button(`edit--${messageID}`, "Edit Entry", "editButton");
+  const editButton = build.button(`edit--${messageID}`, "Edit Entry", "button");
   editButton.addEventListener("click", action.handleEditButton);
   buildDIV.appendChild(editButton);
 
