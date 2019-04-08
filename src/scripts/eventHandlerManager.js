@@ -2,7 +2,7 @@ import fetch from "./APIcaller"
 import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
 import welcome from "./welcome";
-
+import build from "./constructors"
 
 const eventHandler = {
 
@@ -29,7 +29,7 @@ const eventHandler = {
     let taskName = document.querySelector("#nameInputTask");
     let taskDate = document.querySelector("#dateInputTask");
 
-    let entryToPost = build.postTask(taskName.value, taskDate.value, false);
+    let entryToPost = apiStructure.postTask(taskName.value, taskDate.value, false);
     fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
   },
   handleTaskCheckbox() {
@@ -72,7 +72,14 @@ const eventHandler = {
   },
   //not used yet
   handleEditButton() {
-    console.log(event.target.id)
+    let page = event.target.parentNode.parentNode.id.split("-")[0];
+    let pageID = event.target.id.split("--")[2];
+    let pageDivID = event.target.parentNode.id
+    fetch.getOneEntry(page, pageID)
+      .then(data => {
+      let pageDiv = document.querySelector(`#${pageDivID}`)
+      build.clearElement(pageDiv);
+      });
   },
   handleMessageSubmit() {
 
