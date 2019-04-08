@@ -9,26 +9,60 @@
       "id": 2,
       "userName": "Billy",
       "email": "greenbeer@gmail.com"
-    }    
+    },
+    {
+      "userName": "test",
+      "email": "test@gmaill.com",
+      "id": 3
+    }
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": "1",
-      "timeStamp": "dunno",
-      "message": "hello fellas"
+      "userId": 2,
+      "message": "hello ladsd",
+      "id": 2
     },
     {
-      "id": 2,
       "userId": "2",
-      "timeStamp": "dunno",
-      "message": "hello ladies"
+      "timeStamp": "test",
+      "message": "",
+      "id": 4
     },
     {
-      "id": 3,
-      "userId": "1",
-      "timeStamp": "dunno",
-      "message": "hello boys"
+      "userId": "2",
+      "timeStamp": "2019-04-08T20:22:30.395Z",
+      "message": "hello",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-08T20:25:40.309Z",
+      "message": "nnewwwwwwww",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-08T21:00:50.437Z",
+      "message": "asd",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-08T21:40:34.526Z",
+      "message": "hello",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-08T21:40:41.969Z",
+      "message": "hellosdsds",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "timeStamp": "2019-04-08T21:41:58.157Z",
+      "message": "sdf",
+      "id": 10
     }
   ],
   "articles": [
@@ -39,6 +73,54 @@
       "synopsis": "impotant",
       "timeStamp": "",
       "url": "www.time.com"
+    },
+    {
+      "userId": "2",
+      "newsTitle": "sd",
+      "synopsis": "sd",
+      "timeStamp": "",
+      "url": "sd",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "newsTitle": "sdasd",
+      "synopsis": "asdfdfdf",
+      "timeStamp": "2019-04-08T21:00:41.658Z",
+      "url": "asd",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "newsTitle": "asjddjasjd",
+      "synopsis": "asdasdasd",
+      "timeStamp": "2019-04-08T20:53:54.244Z",
+      "url": "asdasdasdd",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "newsTitle": "asjddjasjd",
+      "synopsis": "asdasdasd",
+      "timeStamp": "2019-04-08T20:53:54.866Z",
+      "url": "asdasdasdd",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "newsTitle": "asjddjasjd",
+      "synopsis": "asdasdasd",
+      "timeStamp": "2019-04-08T20:53:55.411Z",
+      "url": "asdasdasdd",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "newsTitle": "asd",
+      "synopsis": "asd",
+      "timeStamp": "2019-04-08T21:00:46.496Z",
+      "url": "asdawsd",
+      "id": 8
     }
   ],
   "friends": [
@@ -55,6 +137,48 @@
       "task": "homework",
       "completeDate": "2019-04-09",
       "complete": true
+    },
+    {
+      "userId": "2",
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "userId": "2",
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "userId": "2",
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": true,
+      "id": 4
+    },
+    {
+      "userId": "2",
+      "task": "asd",
+      "completeDate": "2019-04-06",
+      "complete": true,
+      "id": 5
+    },
+    {
+      "userId": "2",
+      "task": "wwe",
+      "completeDate": "2019-04-06",
+      "complete": true,
+      "id": 6
+    },
+    {
+      "userId": "2",
+      "task": "qwe",
+      "completeDate": "2019-04-05",
+      "complete": false,
+      "id": 7
     }
   ],
   "events": [
