@@ -38,8 +38,22 @@ const buildEventFormHTML = {
         form.append(createEventSaveButton)
         return form
     },
+    buildEventComponent(newEvent){
+        const section = buildHTML.elementWithTextCreator("section", undefined, `eventSection--${newEvent.id}`);
+        const nameH1 = buildHTML.elementWithTextCreator("h1", `${newEvent.name}`);
+        // let eventCheckbox = buildHTML.inputCreator("checkbox", `editEvent--${taskEntry.id}`)
+        // taskCheckbox.addEventListener("click", action.handleTaskEdit);
+        const dateDiv = buildHTML.elementWithTextCreator("div", `${newEvent.date}`);
+        // const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
+        
+        // nameH1.appendChild(taskCheckbox);
+        section.appendChild(nameH1);
+        section.appendChild(dateDiv);
+        // section.appendChild(completedDiv);
+    
+        return section;
 
-
+    }
 
 
 };

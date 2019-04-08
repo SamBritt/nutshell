@@ -10,6 +10,7 @@ const eventsHandler = {
         // Removes the class is--hidden from the element formSection
         formSection.classList.remove("is--hidden")
     },
+    // Event handler to post
     saveEventHandler() {
         let eventName = document.querySelector("#newEvent").value;
         let eventDate = document.querySelector("#newEventDate").value;
@@ -22,8 +23,7 @@ const eventsHandler = {
                 location: eventLocation
             }
             API.postNewEvent(newEvent)
-
-            .then(list.listAllEvents())
+            .then(() => list.listAllEvents())
 
 
 
