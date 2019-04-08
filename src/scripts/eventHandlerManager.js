@@ -90,9 +90,10 @@ const eventHandler = {
         
         console.log(pageDiv)
         build.clearElement(pageDiv)
+        pageDiv.appendChild(struct.buildArticlesForm())
       });
   },
-  // handleArticlesEditSubmitButton = () => {
+  // handleArticleEditSubmitButton = () => {
   //   const journalDivID = event.target.parentNode.id;
 
   //   const entryDate = document.querySelector("#Date");
