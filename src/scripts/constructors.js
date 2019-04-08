@@ -87,6 +87,11 @@ const constructors = {
     formFieldSet.appendChild(this.input(inputType, `${page}InputForm`, "form-control"));
 
     return formFieldSet;
+  },
+  clearElement (domElement) {
+    while (domElement.firstChild) {
+      domElement.removeChild(domElement.firstChild);
+    }
   }
 };
 
