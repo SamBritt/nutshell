@@ -2,18 +2,19 @@ import fetch from "./APIcaller"
 import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
 import welcome from "./welcome";
+import build from "./constructors"
 
 
 const eventHandler = {
 
   //Function to capture the values of data entered into the forms when the submit button is pressed.
-  handleArticlesSubmit() {
+  handleArticleSubmit() {
     let articlesTitle = document.querySelector("#titleInputArticles")
     let articlesSynopsis = document.querySelector("#synopsisInputArticles")
     let articlesTimeStamp = "test"
     let articlesUrl = document.querySelector("#urlInputArticles")
 
-    let entryToPost = apiStructure.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
+    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
     console.log(entryToPost)
 
     fetch.postOne("articles", entryToPost).then(data => {
@@ -64,8 +65,35 @@ const eventHandler = {
   },
   //not used yet
   handleEditButton() {
-    console.log(event.target.id)
+    let page = event.target.parentNode.parentNode.id.split("-")[0];
+    let pageID = event.target.id.split("--")[2];
+    let pageDivID = event.target.parentNode.id
+    fetch.getOneEntry(page, pageID)
+      .then(data => {
+        let pageDiv = document.querySelector(`#${pageDivID}`)
+        
+        console.log(pageDiv)
+        build.clearElement(pageDiv)
+      });
   },
+  // handleArticlesEditSubmitButton = () => {
+  //   const journalDivID = event.target.parentNode.id;
+
+  //   const entryDate = document.querySelector("#Date");
+  //   const entryConcept = document.querySelector("#text");
+  //   const entryJournal = document.querySelector("#editJournalInput");
+  //   const entryMood = document.querySelector("#editMoodInput");
+  //   const journalEntry = {
+  //     date: entryDate.value,
+  //     concept: entryConcept.value,
+  //     entry: entryJournal.value,
+  //     mood: entryMood.value
+  //   };
+
+  //   API.editJournalEntry(journalDivID, journalEntry)
+  //     .then(API.fetchJournalEntries)
+  //     .then(insertDOM.renderJournalEntries);
+  // };
   handleMessageSubmit() {
 
     let messageName = document.querySelector("#messageInputForm");
