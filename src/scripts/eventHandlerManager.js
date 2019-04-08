@@ -1,6 +1,8 @@
 import fetch from "./APIcaller"
 import build from "./APIstructure"
 import DOM from "./domAppender"
+import welcome from "./welcome";
+
 
 const eventHandler = {
 
@@ -13,7 +15,10 @@ const eventHandler = {
 
     let entryToPost = build.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
     console.log(entryToPost)
-    fetch.postOne("articles", entryToPost)
+
+    fetch.postOne("articles", entryToPost).then(data => {
+      DOM.articles.reloadDOM()
+    })
   },
 
   handleTaskSubmit() {
@@ -68,16 +73,22 @@ const eventHandler = {
     console.log(event.target.id)
   },
   handleMessageSubmit() {
-    //Scrapes values of name/date inputs
-    //Converts to object using postTask in APIStructure
-    //Performs a POST request using that object.
-    //Retrieves updated list, then appends to DOM
+
     let messageName = document.querySelector("#messageInputForm");
 
     let entryToPost = build.postMessage(messageName.value);
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })
+  },
+  handleLogin() {
+    welcome.getUserList();
+  },
+  handleNewUser() {
+    DOM.welcome.createRegistration();
+  },
+  handleRegister() {
+    welcome.createNewUser();
   }
 }
 
