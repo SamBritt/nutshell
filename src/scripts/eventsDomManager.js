@@ -34,12 +34,26 @@ const buildEventFormHTML = {
 
         const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
         // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
-        createEventSaveButton.addEventListener("click", () => console.log("this will save your event"))
+        createEventSaveButton.addEventListener("click", handlers.saveEventHandler)
         form.append(createEventSaveButton)
         return form
     },
+    buildEventComponent(newEvent){
+        const section = buildHTML.elementWithTextCreator("section", undefined, `eventSection--${newEvent.id}`);
+        const nameH1 = buildHTML.elementWithTextCreator("h1", `${newEvent.name}`);
+        const eventLocationLabel = buildHTML.elementWithTextCreator("label", "Event Location: ", undefined, undefined);
+        const eventDateLabel = buildHTML.elementWithTextCreator("label", "Date: ", undefined, undefined);
+        const eventLocation = buildHTML.elementWithTextCreator("p", `${newEvent.location}`)
+        const dateDiv = buildHTML.elementWithTextCreator("div", `${newEvent.date}`);
+        eventLocationLabel.appendChild(eventLocation);
+        eventDateLabel.appendChild(dateDiv);
+        section.appendChild(nameH1);
+        section.appendChild(eventDateLabel);
+        section.appendChild(eventLocationLabel);
+    
+        return section;
 
-
+    }
 
 
 };
