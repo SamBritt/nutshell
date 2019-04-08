@@ -1,6 +1,7 @@
 import fetch from "./APIcaller"
 import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
+import struct from "./domStructure";
 import welcome from "./welcome";
 import build from "./constructors"
 
@@ -42,10 +43,18 @@ const eventHandler = {
     console.log("Clicked")
   },
   handleTaskEdit() {
-    console.log("hey");
+    let taskTargetId = event.target.parentNode.id.split("--")[1];
+    console.log(taskTargetId);
+
+    let taskSection = document.querySelector(`#taskSection--${taskTargetId}`);
+    DOM.clearElement(taskSection);
+    fetch.getOneEntry("tasks", taskTargetId).then(taskToEdit => {
+      const editForm = struct.buildTaskEditForm(taskToEdit);
+      taskSection.appendChild(editForm)
+    })
   },
   handleTaskUpdate() {
-
+    console.log("update clicked");
   },
   //this uses event delegation to check for the navigation links, and if the click lands on a navlink, it uses the ID of the element to run the DOM Appender function for the specified page.
   handleNavigation() {
