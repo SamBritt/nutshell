@@ -31,7 +31,16 @@ const eventHandler = {
 
 
     let entryToPost = apiStructure.postTask(taskName.value, taskDate.value, false);
-    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
+    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
+  },
+  handleTaskCheckbox() {
+    let checkBoxId = event.target.id.split("--")[1];
+
+    let patchedTask = {
+      "complete": true
+    }
+    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response));
+    console.log("Clicked")
   },
   handleTaskEdit() {
     console.log("hey");
@@ -74,7 +83,6 @@ const eventHandler = {
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })
-
   },
   handleLogin() {
     welcome.getUserList();
