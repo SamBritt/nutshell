@@ -1,5 +1,5 @@
 import API from "./eventsAPIManager"
-import build from "./domStructure"
+import build from "./constructors"
 
 export default {
     listAllEvents () {
