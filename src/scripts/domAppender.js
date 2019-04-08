@@ -42,21 +42,60 @@ const domAppender = {
         domAppender.home.createDOM();
       } else {
         mainContainer.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
-      mainContainer.appendChild(welcome.loginForm());
-      mainContainer.appendChild(welcome.newUser());
+        mainContainer.appendChild(welcome.loginForm());
+        mainContainer.appendChild(welcome.newUser());
+      }
+    },
+    createRegistration() {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(welcome.registerUser());
     }
-  },
-  createRegistration() {
-    while (mainContainer.firstChild) {
-      mainContainer.removeChild(mainContainer.firstChild);
-    };
-    mainContainer.appendChild(welcome.registerUser());
-  }
 
-},
+  },
   tasks: {
     createDOM() {
-      console.log("home")
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(this.appendTaskForm());
+      mainContainer.appendChild(this.createTaskContainer());
+      
+    },
+    reloadDOM() {
+      while (mainContainer.childNodes[1]) {
+        mainContainer.removeChild(mainContainer.childNodes[1]);
+      };
+    },
+    appendTaskForm() {
+      let taskSection = document.createElement("section");
+      taskSection.id = "tasks-section";
+      taskSection.appendChild(domStructure.buildTaskForm());
+      return taskSection;
+    },
+    //Creates a container for DOM elements to be displayed
+    createTaskContainer() {
+      // const taskSection = document.getElementById("tasks-section");
+      const article = build.elementWithTextCreator("article", undefined, "taskArticle")
+      // taskSection.appendChild(article);
+      return article;
+    },
+    //Loops through task objects, creates HTML structure for each, then appends
+    //to DOM
+    appendTasks(tasks) {
+      let taskArticle = document.getElementById("taskArticle");
+
+      let docFrag = document.createDocumentFragment();
+      tasks.forEach(element => {
+        if (element.complete === false) {
+          docFrag.appendChild(domStructure.buildTaskComponent(element))
+        }
+      });
+      domAppender.clearElement(taskArticle);
+
+      taskArticle.appendChild(docFrag);
+
     }
   },
   articles: {
@@ -87,13 +126,13 @@ const domAppender = {
       formSection.classList.add("card-deck")
       formSection.id = "articles-section";
       fetch.getAll("articles")
-      .then(articles => {
-        let docFrag = document.createDocumentFragment();
-        articles.forEach(articlesObject => {
-          docFrag.appendChild(this.postToDOM(articlesObject));
-        });
-        formSection.appendChild(docFrag)
-      })
+        .then(articles => {
+          let docFrag = document.createDocumentFragment();
+          articles.forEach(articlesObject => {
+            docFrag.appendChild(this.postToDOM(articlesObject));
+          });
+          formSection.appendChild(docFrag)
+        })
       return formSection
     },
     //Creates articles object used turn API data into HTML.
@@ -150,36 +189,7 @@ const domAppender = {
     createDOM() {
       console.log("friends")
     }
-  },
-  appendTaskForm() {
-    let taskSection = document.querySelector("#tasks-section");
-    taskSection.appendChild(domStructure.buildTaskForm());
-  },
-
-
-  //Creates a container for DOM elements to be displayed
-  createTaskContainer() {
-    const taskSection = document.getElementById("tasks-section");
-    const article = build.elementWithTextCreator("article", undefined, "taskArticle")
-    taskSection.appendChild(article);
-  },
-  //Loops through task objects, creates HTML structure for each, then appends
-  //to DOM
-  appendTasks(tasks) {
-    let taskArticle = document.getElementById("taskArticle");
-
-    let docFrag = document.createDocumentFragment();
-        tasks.forEach(element => {
-          if(element.complete === false){
-            docFrag.appendChild(domStructure.buildTaskComponent(element))
-          }
-        });
-        this.clearElement(taskArticle);
-
-    taskArticle.appendChild(docFrag);
-
   }
-
 };
 
 export default domAppender;

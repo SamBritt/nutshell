@@ -31,7 +31,7 @@ const eventHandler = {
 
 
     let entryToPost = build.postTask(taskName.value, taskDate.value, false);
-    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
+    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
   },
   handleTaskCheckbox() {
     let checkBoxId = event.target.id.split("--")[1];
@@ -39,7 +39,7 @@ const eventHandler = {
     let patchedTask = {
       "complete": true
     }
-    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response));
+    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response));
     console.log("Clicked")
   },
   handleTaskEdit() {
