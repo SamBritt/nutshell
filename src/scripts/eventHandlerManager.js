@@ -1,5 +1,5 @@
 import fetch from "./APIcaller"
-import build from "./APIstructure"
+import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
 import welcome from "./welcome";
 
@@ -13,7 +13,7 @@ const eventHandler = {
     let articlesTimeStamp = "test"
     let articlesUrl = document.querySelector("#urlInputArticles")
 
-    let entryToPost = build.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
+    let entryToPost = apiStructure.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
     console.log(entryToPost)
 
     fetch.postOne("articles", entryToPost).then(data => {
@@ -23,14 +23,14 @@ const eventHandler = {
 
   handleTaskSubmit() {
     //Scrapes values of name/date inputs
-    //Converts to object using postTask in APIStructure
+    //Converts to object using postTask in apiStructure
     //Performs a POST request using that object.
     //Retrieves updated list, then appends to DOM
     let taskName = document.querySelector("#nameInputTask");
     let taskDate = document.querySelector("#dateInputTask");
 
 
-    let entryToPost = build.postTask(taskName.value, taskDate.value, false);
+    let entryToPost = apiStructure.postTask(taskName.value, taskDate.value, false);
     fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.appendTasks(response))
   },
   handleTaskEdit() {
@@ -46,7 +46,10 @@ const eventHandler = {
     }
 
     let page = event.target.id.split("--")[1];
-
+    let target = event.target;
+    let activeNav = document.querySelector(".active");
+    activeNav.classList.remove("active");
+    target.classList.add("active")
     DOM[page].createDOM()
   },
   //this uses dynamic targeting to reference the ID and page of the card to be deleted. It then reloads the DOM with an updated version of the page.
@@ -67,7 +70,7 @@ const eventHandler = {
 
     let messageName = document.querySelector("#messageInputForm");
 
-    let entryToPost = build.postMessage(messageName.value);
+    let entryToPost = apiStructure.postMessage(messageName.value);
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })

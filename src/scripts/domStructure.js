@@ -15,6 +15,7 @@ const domStructure = {
     createNavBar() {
       
       const navList = build.elementWithText("ul", "", null, "navbar-nav");
+      navList.appendChild(this.createNavItem("home"));
       navList.appendChild(this.createNavItem("tasks"));
       navList.appendChild(this.createNavItem("articles"));
       navList.appendChild(this.createNavItem("events"));
