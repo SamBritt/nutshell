@@ -25,7 +25,6 @@ const domStructure = {
       return navList;
     }
   },
-
   buildTaskFormButton() {
     let createTaskButton = build.buttonCreator("taskButtonTask", "Create New Task", undefined);
     createTaskButton.addEventListener("click", () => console.log("Clicked!"));
@@ -49,7 +48,6 @@ const domStructure = {
     formSubmitButton.addEventListener("click", action.handleTaskSubmit);
     form.appendChild(formSubmitButton);
 
-
     return form;
   },
   //This function builds the forms for the Articles component and will be appended to the DOM by the appendArticlesForm
@@ -57,23 +55,58 @@ const domStructure = {
   buildArticlesForm() {
     const form = build.elementWithTextCreator("form", undefined, "buildFormArticles", undefined);
 
-    const labelForTitle = build.elementWithTextCreator("label", "Enter Articles Title: ", undefined, undefined);
+    const labelForTitle = build.elementWithTextCreator("label", "Enter Article Title: ", undefined, undefined);
     let inputTitle = build.inputCreator("text", "titleInputArticles");
     form.appendChild(labelForTitle);
     form.appendChild(inputTitle);
 
-    const labelForSynopsis = build.elementWithTextCreator("label", "Enter Articles Synopsis: ", undefined, undefined);
+    const labelForSynopsis = build.elementWithTextCreator("label", "Enter Article Synopsis: ", undefined, undefined);
     let inputSynopsis = build.inputCreator("text", "synopsisInputArticles");
     form.appendChild(labelForSynopsis);
     form.appendChild(inputSynopsis);
 
-    const labelForUrl = build.elementWithTextCreator("label", "Enter Articles URL: ", undefined, undefined);
+    const labelForUrl = build.elementWithTextCreator("label", "Enter Article URL: ", undefined, undefined);
     let inputUrl = build.inputCreator("text", "urlInputArticles");
     form.appendChild(labelForUrl);
     form.appendChild(inputUrl);
 
-    let formSubmitButton = build.buttonCreator("submitFormArticles", "Submit Articles", undefined);
-    formSubmitButton.addEventListener("click", action.handleArticlesSubmit);
+    let formSubmitButton = build.buttonCreator("submitFormArticles", "Submit Article", undefined);
+    formSubmitButton.addEventListener("click", action.handleArticleSubmit);
+    form.appendChild(formSubmitButton);
+
+    return form;
+  },
+  // This function is used to reload the original entry forms and load the saved data in the JSON for
+  // the article that is wanting to be edited
+  editArticlesForm(articlesObject) {
+    const articlesTitle = articlesObject.newsTitle;
+    const articlesSynopsis = articlesObject.synopsis;
+    const articlesUrl = articlesObject.url;
+    const articlesID = `articlesEdit--${articlesObject.id}`;
+
+
+    const form = build.elementWithTextCreator("form", undefined, articlesID, undefined);
+
+    const labelForTitle = build.elementWithTextCreator("label", "Enter Article Title: ", undefined, undefined);
+    let inputTitle = build.inputCreator("text", "editTitleInputArticles");
+    inputTitle.value = articlesTitle;
+    form.appendChild(labelForTitle);
+    form.appendChild(inputTitle);
+
+    const labelForSynopsis = build.elementWithTextCreator("label", "Enter Article Synopsis: ", undefined, undefined);
+    let inputSynopsis = build.inputCreator("text", "editSynopsisInputArticles");
+    inputSynopsis.value = articlesSynopsis;
+    form.appendChild(labelForSynopsis);
+    form.appendChild(inputSynopsis);
+
+    const labelForUrl = build.elementWithTextCreator("label", "Enter Article URL: ", undefined, undefined);
+    let inputUrl = build.inputCreator("text", "editUrlInputArticles");
+    inputUrl.value = articlesUrl;
+    form.appendChild(labelForUrl);
+    form.appendChild(inputUrl);
+
+    let formSubmitButton = build.buttonCreator("submitFormArticles", "Submit Article", undefined);
+    formSubmitButton.addEventListener("click", action.handleArticleEditSubmitButton);
     form.appendChild(formSubmitButton);
 
     return form;
@@ -112,7 +145,6 @@ const domStructure = {
 
     return taskFrag;
   }
-
 }
 
 export default domStructure

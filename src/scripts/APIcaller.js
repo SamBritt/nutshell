@@ -30,6 +30,15 @@ const API = {
       },
       body: JSON.stringify(entry)
     })
+  },
+  editEntry(endpoint, entryID, entry){
+    return fetch(`${apiBaseUrl}/${endpoint}/${entryID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
+    })
   }
 };
 
