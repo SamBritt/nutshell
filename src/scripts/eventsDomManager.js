@@ -41,14 +41,17 @@ const buildEventFormHTML = {
     buildEventComponent(newEvent){
         const section = buildHTML.elementWithTextCreator("section", undefined, `eventSection--${newEvent.id}`);
         const nameH1 = buildHTML.elementWithTextCreator("h1", `${newEvent.name}`);
+        const createEventLocationLabel = buildHTML.elementWithTextCreator("label", "Event Location: ", undefined, undefined);
         // let eventCheckbox = buildHTML.inputCreator("checkbox", `editEvent--${taskEntry.id}`)
         // taskCheckbox.addEventListener("click", action.handleTaskEdit);
+        const eventLocation = buildHTML.elementWithTextCreator("h2", `${newEvent.location}`)
         const dateDiv = buildHTML.elementWithTextCreator("div", `${newEvent.date}`);
         // const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
-        
         // nameH1.appendChild(taskCheckbox);
+        section.appendChild(createEventLocationLabel)
         section.appendChild(nameH1);
         section.appendChild(dateDiv);
+        section.appendChild(eventLocation)
         // section.appendChild(completedDiv);
     
         return section;
