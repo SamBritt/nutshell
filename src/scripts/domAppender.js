@@ -8,7 +8,8 @@ import welcome from "./welcome"
 import home from "./home"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
-const userID = window.sessionStorage.getItem("userID")
+const userIDstring = window.sessionStorage.getItem("userID");
+const userID = parseInt(userIDstring);
 const mainContainer = document.querySelector("#main-container");
 
 const domAppender = {

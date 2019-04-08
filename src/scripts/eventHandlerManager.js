@@ -105,8 +105,8 @@ const eventHandler = {
   handleMessageSubmit() {
 
     let messageName = document.querySelector("#messageInputForm");
-
-    let entryToPost = apiStructure.postMessage(messageName.value);
+    let time = new Date();
+    let entryToPost = apiStructure.postMessage(messageName.value, time);
     fetch.postOne("messages", entryToPost).then(data => {
       DOM.messages.reloadDOM()
     })

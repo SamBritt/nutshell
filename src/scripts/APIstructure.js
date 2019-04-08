@@ -1,6 +1,7 @@
 import build from "./constructors"
 
-const userID = window.sessionStorage.getItem("userID")
+const userIDstring = window.sessionStorage.getItem("userID");
+const userID = parseInt(userIDstring);
 
 const APIstructure = {
 
@@ -26,10 +27,10 @@ const APIstructure = {
         return taskObject;
 
     },
-    postMessage(message) {
+    postMessage(message, time) {
         let messageObject = {
             "userId": userID,
-            "timestamp": "test",
+            "timeStamp": time,
             "message": message,
         }
         return messageObject;

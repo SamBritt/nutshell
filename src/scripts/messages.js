@@ -11,7 +11,7 @@ const messages = {
     const formArticle = document.createElement("article");
     formArticle.classList.add("card-deck")
     formArticle.id = "messages-article";
-    fetch.getAll("messages").then(messages => {
+    fetch.getAll("messages?_expand=user").then(messages => {
       let docFrag = document.createDocumentFragment();
       messages.forEach(messageObject => {
         docFrag.appendChild(this.postToDOM(messageObject));
@@ -51,8 +51,9 @@ const messages = {
 //creates message object used turn API data into HTML.
 postToDOM (messageObject) {
   const messageTime = messageObject.timeStamp;
-  const messageUser = messageObject.userId;
+  const messageUser = messageObject.user.userName;
   const messageText = messageObject.message;
+
   const messageID = `messageCard--${messageObject.id}`;
 
   const buildDIV = build.elementWithText("div", "", messageID, "card");
