@@ -67,7 +67,7 @@ const domAppender = {
       };
       mainContainer.appendChild(this.appendTaskForm());
       mainContainer.appendChild(this.createTaskContainer());
-      
+      fetch.getAll("tasks").then(response => this.appendTasks(response))
     },
     reloadDOM() {
       while (mainContainer.childNodes[1]) {
