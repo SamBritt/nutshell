@@ -29,7 +29,7 @@ const constructors = {
     button.id = elementId;
     button.setAttribute("type", "button");
     button.textContent = elementText;
-    button.classList.add(elementClass);
+    button.classList.add("button");
     return button;
   },
   //Creates an HTML fieldset element with values: textContent, type and id
