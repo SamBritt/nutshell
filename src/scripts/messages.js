@@ -22,8 +22,8 @@ const messages = {
   },
 
   //builds the input form for creating a new message, does not currently post to API or DOM
-    buildForm() {
-    const form = build.elementWithText("form", "", "buildTaskForm", "inputForm");
+    buildForm(value) {
+    const form = build.elementWithText("form", "", "messageForm", "inputForm");
 
     form.appendChild(build.fieldset("Enter a message", "text", "message"));
 
@@ -33,11 +33,25 @@ const messages = {
 
     return form;
 },
+    editForm(messageObject) {
+      const messageTime = messageObject.timeStamp;
+      const messageUser = messageObject.userId;
+      const messageText = messageObject.message;
+      const messageID = `messageEdit--${messageObject.id}`;
 
+    const form = build.elementWithText("form", "", messageID, "inputForm");
+    form.appendChild(build.fieldset("Enter a message", "text", "editMessage", messageText));
+      
+    let formSubmitButton = build.button("editMessageButton", "Post Edited Message");
+    formSubmitButton.addEventListener("click", action.messageEditSubmit);
+    form.appendChild(formSubmitButton);
+
+    return form;
+},
 //creates message object used turn API data into HTML.
 postToDOM (messageObject) {
   const messageTime = messageObject.timeStamp;
-  const messageUser = messageObject.userID;
+  const messageUser = messageObject.userId;
   const messageText = messageObject.message;
   const messageID = `messageCard--${messageObject.id}`;
 

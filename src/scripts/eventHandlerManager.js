@@ -3,7 +3,8 @@ import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
 import struct from "./domStructure";
 import welcome from "./welcome";
-import build from "./constructors"
+import build from "./constructors";
+import messages from "./messages"
 
 const eventHandler = {
 
@@ -88,8 +89,19 @@ const eventHandler = {
       .then(data => {
       let pageDiv = document.querySelector(`#${pageDivID}`)
       build.clearElement(pageDiv);
+      pageDiv.appendChild(messages.editForm(data));
       });
   },
+  messageEditSubmit() {
+    let messageName = document.querySelector("#editMessageInputForm");
+    let editPageID = event.target.parentNode.id.split("--")[1];
+    let entryToPost = apiStructure.postMessage(messageName.value);
+    fetch.editEntry("messages", editPageID, entryToPost).then(() => {
+      DOM.messages.reloadDOM()
+
+  })
+  },
+
   handleMessageSubmit() {
 
     let messageName = document.querySelector("#messageInputForm");
