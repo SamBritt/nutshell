@@ -12,57 +12,26 @@
     },
     {
       "userName": "test",
-      "email": "test@gmaill.com",
+      "email": "test@gmail.com",
       "id": 3
     }
   ],
   "messages": [
     {
-      "userId": 2,
-      "message": "hello ladsd",
-      "id": 2
-    },
-    {
-      "userId": "2",
-      "timeStamp": "test",
-      "message": "",
-      "id": 4
-    },
-    {
-      "userId": "2",
-      "timeStamp": "2019-04-08T20:22:30.395Z",
-      "message": "hello",
-      "id": 5
-    },
-    {
-      "userId": 2,
+      "userId": 1,
       "timeStamp": "2019-04-08T20:25:40.309Z",
       "message": "nnewwwwwwww",
-      "id": 6
-    },
-    {
+      "id": 1
+    },    {
       "userId": 2,
-      "timeStamp": "2019-04-08T21:00:50.437Z",
-      "message": "asd",
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "timeStamp": "2019-04-08T21:40:34.526Z",
-      "message": "hello",
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "timeStamp": "2019-04-08T21:40:41.969Z",
-      "message": "hellosdsds",
-      "id": 9
-    },
-    {
+      "timeStamp": "2019-04-09T20:25:40.309Z",
+      "message": "nnewwwwwwww",
+      "id": 2
+    },    {
       "userId": 3,
-      "timeStamp": "2019-04-08T21:41:58.157Z",
-      "message": "sdf",
-      "id": 10
+      "timeStamp": "2019-04-07T20:25:40.309Z",
+      "message": "nnewwwwwwww",
+      "id": 3
     }
   ],
   "articles": [

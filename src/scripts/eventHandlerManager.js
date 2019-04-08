@@ -79,7 +79,9 @@ const eventHandler = {
     fetch.deleteEntry(page, pageID)
       .then(data => {
         let page = document.querySelector("article").id.split("-")[0];
-        DOM[page].createDOM()
+        setTimeout(() => {
+          DOM[page].reloadDOM()
+        }, 500);
       });
   },
   //not used yet
@@ -110,6 +112,7 @@ const eventHandler = {
       DOM.articles.reloadDOM()
     })
   },
+
     handleEditButton() {
       let page = event.target.parentNode.parentNode.id.split("-")[0];
       let pageID = event.target.id.split("--")[2];
