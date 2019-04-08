@@ -9,12 +9,14 @@ const eventHandler = {
 
   //Function to capture the values of data entered into the forms when the submit button is pressed.
   handleArticleSubmit() {
+
     let articlesTitle = document.querySelector("#titleInputArticles")
     let articlesSynopsis = document.querySelector("#synopsisInputArticles")
-    let articlesTimeStamp = "test"
+    let articlesTimeStamp = new Date()
     let articlesUrl = document.querySelector("#urlInputArticles")
 
-    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
+    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value,
+      dateString.value, articlesUrl.value)
     console.log(entryToPost)
 
     fetch.postOne("articles", entryToPost).then(data => {
@@ -80,7 +82,7 @@ const eventHandler = {
       });
   },
   //not used yet
-  handleEditButton() {
+  handleArticleEditButton() {
     let page = event.target.parentNode.parentNode.id.split("-")[0];
     let pageID = event.target.id.split("--")[2];
     let pageDivID = event.target.parentNode.id
@@ -90,27 +92,23 @@ const eventHandler = {
         
         console.log(pageDiv)
         build.clearElement(pageDiv)
-        pageDiv.appendChild(struct.buildArticlesForm())
+        pageDiv.appendChild(struct.editArticlesForm(data))
       });
   },
-  // handleArticleEditSubmitButton = () => {
-  //   const journalDivID = event.target.parentNode.id;
+  handleArticleEditSubmitButton () {
+    let pageID = event.target.parentNode.id.split("--")[1];
+    let articlesTitle = document.querySelector("#editTitleInputArticles")
+    let articlesSynopsis = document.querySelector("#editSynopsisInputArticles")
+    let articlesTimeStamp = new Date()
+    let articlesUrl = document.querySelector("#editUrlInputArticles")
+    
+    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value,
+      articlesTimeStamp, articlesUrl.value)
 
-  //   const entryDate = document.querySelector("#Date");
-  //   const entryConcept = document.querySelector("#text");
-  //   const entryJournal = document.querySelector("#editJournalInput");
-  //   const entryMood = document.querySelector("#editMoodInput");
-  //   const journalEntry = {
-  //     date: entryDate.value,
-  //     concept: entryConcept.value,
-  //     entry: entryJournal.value,
-  //     mood: entryMood.value
-  //   };
-
-  //   API.editJournalEntry(journalDivID, journalEntry)
-  //     .then(API.fetchJournalEntries)
-  //     .then(insertDOM.renderJournalEntries);
-  // };
+    fetch.editEntry("articles", pageID, entryToPost).then(data => {
+      DOM.articles.reloadDOM()
+    })
+  },
   handleMessageSubmit() {
 
     let messageName = document.querySelector("#messageInputForm");
