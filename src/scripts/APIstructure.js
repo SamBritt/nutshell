@@ -1,6 +1,7 @@
 import build from "./constructors"
 
-const userID = window.sessionStorage.getItem("userID")
+const userIDstring = window.sessionStorage.getItem("userID");
+const userID = parseInt(userIDstring);
 
 const APIstructure = {
 
