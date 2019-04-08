@@ -110,6 +110,17 @@ const eventHandler = {
       DOM.articles.reloadDOM()
     })
   },
+    handleEditButton() {
+      let page = event.target.parentNode.parentNode.id.split("-")[0];
+      let pageID = event.target.id.split("--")[2];
+      let pageDivID = event.target.parentNode.id
+      fetch.getOneEntry(page, pageID)
+        .then(data => {
+        let pageDiv = document.querySelector(`#${pageDivID}`)
+        build.clearElement(pageDiv);
+        pageDiv.appendChild(messages.editForm(data));
+        });
+    },
   messageEditSubmit() {
     let messageName = document.querySelector("#editMessageInputForm");
     let editPageID = event.target.parentNode.id.split("--")[1];
