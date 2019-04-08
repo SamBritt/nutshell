@@ -16,7 +16,7 @@ const eventHandler = {
     let articlesUrl = document.querySelector("#urlInputArticles")
 
     let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value,
-      dateString.value, articlesUrl.value)
+      articlesTimeStamp, articlesUrl.value)
     console.log(entryToPost)
 
     fetch.postOne("articles", entryToPost).then(data => {
