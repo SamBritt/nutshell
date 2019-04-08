@@ -142,3 +142,7 @@ fieldset {
 #homePageHeader {
   text-transform: capitalize;
 }
+
+.edit-form-is--hidden {
+  display: none
+}

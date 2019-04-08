@@ -1,6 +1,8 @@
 import eventsHTML from "./eventsDomManager"
 import API from "./eventsAPIManager"
 import list from "./listEvents"
+import DOM from "./domAppender"
+import domAppender from "./domAppender";
 
 const eventsHandler = {
     // Event handler to print new event form to the DOM
@@ -22,11 +24,14 @@ const eventsHandler = {
                 date: eventDate,
                 location: eventLocation
             }
+            
             API.postNewEvent(newEvent)
-            .then(() => list.listAllEvents())
-
-
-
+            .then(() => DOM.events.reloadDOM())
+            
+    },
+    editEventHandler() {
+        let editFormSection = document.querySelector(".edit-form-is--hidden");
+        editFormSection.classList.remove("edit-form-is--hidden")
     }
 }
 
