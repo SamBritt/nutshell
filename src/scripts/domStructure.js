@@ -15,6 +15,7 @@ const domStructure = {
     createNavBar() {
       
       const navList = build.elementWithText("ul", "", null, "navbar-nav");
+      navList.appendChild(this.createNavItem("home"));
       navList.appendChild(this.createNavItem("tasks"));
       navList.appendChild(this.createNavItem("articles"));
       navList.appendChild(this.createNavItem("events"));
@@ -84,7 +85,7 @@ const domStructure = {
     const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
     let taskCheckbox = build.inputCreator("checkbox", `editTask--${taskEntry.id}`)
-    taskCheckbox.addEventListener("click", action.handleTaskEdit);
+    taskCheckbox.addEventListener("click", action.handleTaskCheckbox);
     const dateDiv = build.elementWithTextCreator("div", `${taskEntry.completeDate}`);
     const completedDiv = build.elementWithTextCreator("div", `${taskEntry.complete}`);
     
@@ -94,8 +95,8 @@ const domStructure = {
     section.appendChild(completedDiv);
 
     return section;
-  }
 
+  }
 }
 
 export default domStructure
