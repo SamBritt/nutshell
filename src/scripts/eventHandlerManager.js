@@ -41,9 +41,11 @@ const eventHandler = {
     fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response));
     console.log("Clicked")
   },
+  //gets the task entry based off its id
+  //clears the DOM
+  //makes way for a form to be made in domStructure.js
   handleTaskEdit() {
     let taskTargetId = event.target.parentNode.id.split("--")[1];
-    console.log(taskTargetId);
 
     let taskSection = document.querySelector(`#taskSection--${taskTargetId}`);
     DOM.clearElement(taskSection);
@@ -52,8 +54,21 @@ const eventHandler = {
       taskSection.appendChild(editForm)
     })
   },
+  //Strips values from new Name a Date values.
+  //Formats them into an object
+  //Executes a patch with those new objects, and reloads DOM
   handleTaskUpdate() {
     console.log("update clicked");
+    let taskTargetId = event.target.parentNode.id.split("--")[1];
+    let taskNameToEdit = document.querySelector(`#editTaskName--${taskTargetId}`);
+    let taskDateToEdit = document.querySelector(`#editTaskDate--${taskTargetId}`);
+
+    let editTaskObj = {
+      "task": taskNameToEdit.value,
+      "completeDate": taskDateToEdit.value
+    }
+
+    fetch.patchEntry("tasks", taskTargetId, editTaskObj).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
   },
   //this uses event delegation to check for the navigation links, and if the click lands on a navlink, it uses the ID of the element to run the DOM Appender function for the specified page.
   handleNavigation() {
