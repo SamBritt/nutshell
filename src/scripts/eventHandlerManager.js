@@ -9,13 +9,15 @@ import messages from "./messages"
 const eventHandler = {
 
   //Function to capture the values of data entered into the forms when the submit button is pressed.
-  handleArticlesSubmit() {
+  handleArticleSubmit() {
+
     let articlesTitle = document.querySelector("#titleInputArticles")
     let articlesSynopsis = document.querySelector("#synopsisInputArticles")
-    let articlesTimeStamp = "test"
+    let articlesTimeStamp = new Date()
     let articlesUrl = document.querySelector("#urlInputArticles")
 
-    let entryToPost = apiStructure.postArticles(articlesTitle.value, articlesSynopsis.value, "", articlesUrl.value)
+    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value,
+      articlesTimeStamp, articlesUrl.value)
     console.log(entryToPost)
 
     fetch.postOne("articles", entryToPost).then(data => {
@@ -81,16 +83,32 @@ const eventHandler = {
       });
   },
   //not used yet
-  handleEditButton() {
+  handleArticleEditButton() {
     let page = event.target.parentNode.parentNode.id.split("-")[0];
     let pageID = event.target.id.split("--")[2];
     let pageDivID = event.target.parentNode.id
     fetch.getOneEntry(page, pageID)
       .then(data => {
-      let pageDiv = document.querySelector(`#${pageDivID}`)
-      build.clearElement(pageDiv);
-      pageDiv.appendChild(messages.editForm(data));
+        let pageDiv = document.querySelector(`#${pageDivID}`)
+        
+        console.log(pageDiv)
+        build.clearElement(pageDiv)
+        pageDiv.appendChild(struct.editArticlesForm(data))
       });
+  },
+  handleArticleEditSubmitButton () {
+    let pageID = event.target.parentNode.id.split("--")[1];
+    let articlesTitle = document.querySelector("#editTitleInputArticles")
+    let articlesSynopsis = document.querySelector("#editSynopsisInputArticles")
+    let articlesTimeStamp = new Date()
+    let articlesUrl = document.querySelector("#editUrlInputArticles")
+    
+    let entryToPost = apiStructure.postArticle(articlesTitle.value, articlesSynopsis.value,
+      articlesTimeStamp, articlesUrl.value)
+
+    fetch.editEntry("articles", pageID, entryToPost).then(data => {
+      DOM.articles.reloadDOM()
+    })
   },
   messageEditSubmit() {
     let messageName = document.querySelector("#editMessageInputForm");
