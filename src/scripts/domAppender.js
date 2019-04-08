@@ -1,15 +1,14 @@
 import domStructure from "./domStructure";
 import fetch from "./APIcaller";
-import apiStructure from "./APIstructure";
 import build from "./constructors";
 import messages from "./messages";
 import event from "./eventsAppender"
 import eventHandler from "./eventHandlerManager"
 import welcome from "./welcome"
-
+import home from "./home"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
-
+const userID = window.sessionStorage.getItem("userID")
 const mainContainer = document.querySelector("#main-container");
 
 const domAppender = {
@@ -29,9 +28,9 @@ const domAppender = {
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
-      const home = document.querySelector("#nav--home");
-      home.classList.add("active");
-      mainContainer.appendChild(build.elementWithText("h1", `Welcome ${window.sessionStorage.getItem("userName")} `,"welcomeHeader"))
+      const homeNav = document.querySelector("#nav--home");
+      homeNav.classList.add("active");
+      mainContainer.appendChild(home.homePage());
 
     }
 
@@ -45,7 +44,8 @@ const domAppender = {
         domAppender.home.createDOM();
       } else {
         let welcomePage = document.createElement("article");
-        welcomePage.appendChild(build.elementWithText("h1", "Welcome to NutsHell"));
+        welcomePage.id = "welcome-page"
+        welcomePage.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
       welcomePage.appendChild(welcome.loginForm());
       welcomePage.appendChild(welcome.newUser());
       mainContainer.appendChild(welcomePage)
@@ -55,7 +55,8 @@ const domAppender = {
     while (mainContainer.firstChild) {
       mainContainer.removeChild(mainContainer.firstChild);
     };
-    mainContainer.appendChild(welcome.registerUser());
+
+    mainContainer.appendChild(welcome.registerUserForm());
   }
 
 },
@@ -86,7 +87,7 @@ const domAppender = {
       return articlesSection
     },
     //This pulls the data from the aritcles API and uses the structure built in the
-    // POSTtoDOM function to build the cards. It is used in the DOMappender to create the DOM for the articles page.
+    // POSTtoDOM function to build the cards. It is used in the DOMappender to create the DOM for the articles page. `users/${userID}/articles`
     listArticles() {
       const formSection = document.createElement("article");
       formSection.classList.add("card-deck")
