@@ -1,7 +1,6 @@
 import build from "./constructors"
 import action from "./eventHandlerManager"
 
-
 const domStructure = {
 
   nav: {
@@ -25,10 +24,12 @@ const domStructure = {
       return navList;
     }
   },
+
   buildTaskFormButton() {
     let createTaskButton = build.buttonCreator("taskButtonTask", "Create New Task", undefined);
     createTaskButton.addEventListener("click", () => console.log("Clicked!"));
   },
+  //Builds the initial form to enter new tasks
   buildTaskForm() {
     const section = build.elementWithTextCreator("section", undefined, "taskSection", undefined)
     const form = build.elementWithTextCreator("form", undefined, "buildFormTask", undefined);
@@ -50,8 +51,7 @@ const domStructure = {
 
     return form;
   },
-  //This function builds the forms for the Articles component and will be appended to the DOM by the appendArticlesForm
-  //function in domAppender.js
+  //This function builds the forms for the Articles component and will be appended to the DOM by the appendArticlesForm function in domAppender.js
   buildArticlesForm() {
     const form = build.elementWithTextCreator("form", undefined, "buildFormArticles", undefined);
 
@@ -112,8 +112,7 @@ const domStructure = {
     return form;
 
   },
-  //Builds an HTML representation of key/values stored in JSON server.
-  //Returns the section to be used in domAppender.js
+  //Builds an HTML representation of key/values stored in JSON server. Returns the section to be used in domAppender.js
   buildTaskComponent(taskEntry) {
     const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
@@ -132,13 +131,18 @@ const domStructure = {
 
     return section;
   },
+  //Form used to replace existing task name and date. See handleTaskUpdate in eventHandlerManager.js
   buildTaskEditForm(taskEntry) {
     let taskFrag = document.createDocumentFragment();
 
     taskFrag.appendChild(build.elementWithTextCreator("label", "New Task Name: "))
-    taskFrag.appendChild(build.inputCreator("text", `editTaskName--${taskEntry.id}`))
+    let editNameInput = build.inputCreator("text", `editTaskName--${taskEntry.id}`)
+    editNameInput.value = taskEntry.task;
+    taskFrag.appendChild(editNameInput)
     taskFrag.appendChild(build.elementWithTextCreator("label", "New Deadline: "))
-    taskFrag.appendChild(build.inputCreator("text", `editTaskDate--${taskEntry.id}`))
+    let editDateInput = build.inputCreator("text", `editTaskDate--${taskEntry.id}`);
+    editDateInput.value = taskEntry.completeDate
+    taskFrag.appendChild(editDateInput)
     let taskUpdateButton = build.buttonCreator(`updateTask--${taskEntry.id}`, "Update");
     taskUpdateButton.addEventListener("click", action.handleTaskUpdate)
     taskFrag.appendChild(taskUpdateButton);
