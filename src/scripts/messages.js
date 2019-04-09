@@ -4,6 +4,9 @@ import apiStructure from "./APIstructure";
 import action from "./eventHandlerManager"
 import build from "./constructors"
 
+const userIDstring = window.sessionStorage.getItem("userID");
+const userID = parseInt(userIDstring);
+
 const messages = {
 
   //this pulls the data from the messages API and uses the structure built in the POSTtoDOM function to build the cards. It is used in the DOMappender to create the DOM for the message page.
@@ -17,7 +20,7 @@ const messages = {
           return new Date(b.timeStamp) - new Date(a.timeStamp);
         });
       }
-      const sortedMessages = sortMessages(messages).slice(0,5);
+      const sortedMessages = sortMessages(messages).slice(0,10);
       console.log(sortedMessages);
       let docFrag = document.createDocumentFragment();
       sortedMessages.forEach(messageObject => {
@@ -60,16 +63,24 @@ postToDOM (messageObject) {
   const messageUser = messageObject.user.userName;
   const messageText = messageObject.message;
   const messageID = `messageCard--${messageObject.id}`;
-
+  const friendID = messageObject.user.id
+  console.log(friendID)
   const buildDIV = build.elementWithText("div", "", messageID, "card");
 
   buildDIV.appendChild(build.elementWithText("h4", messageUser));
 
   buildDIV.appendChild(build.elementWithText("p", messageText));
 
-//   const deleteButton = build.button(`delete--${messageID}`, "Delete message", "button");
-//   deleteButton.addEventListener("click", action.handleDeleteButton);
-//  buildDIV.appendChild(deleteButton);
+  const friendButton = build.button(`friends--${friendID}`, "Add Friend?", "button");
+  friendButton.addEventListener("click", action.addFriendButton);
+
+  fetch.getAll(`users/${userID}/friends?_expand=otherFriend`).then(friends => {
+  let addFriend = friends.find(friend => {
+    return friend.otherFriendId === friendID;
+  });
+  if (!addFriend && friendID !== userID) {
+ buildDIV.appendChild(friendButton);
+  }});
 
   const editButton = build.button(`edit--${messageID}`, "Edit Entry", "button");
   editButton.addEventListener("click", action.handleEditButton);

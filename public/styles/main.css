@@ -144,11 +144,27 @@ fieldset {
 }
 
 .currentUser {
-  background-color: #C2E7DA
+  background-color: #C2E7DA;
+  
 }
 
 #messages-article {
-  max-height: 400px;
-  overflow: scroll;
   flex-direction: column-reverse;
+  width: 1200px;
+  background-image: linear-gradient(#DBEEF9,  #29335C);
+}
+
+#messages-article .card {
+  margin: 10px 10%;
+  width: 600px;
+  border-radius: .4em;
+}
+
+
+#messageForm {
+  margin: 0 25%;
+}
+
+#messages-article .currentUser {
+  align-self: flex-end;
 }

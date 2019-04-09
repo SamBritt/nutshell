@@ -6,6 +6,7 @@ import event from "./eventsAppender"
 import eventHandler from "./eventHandlerManager"
 import welcome from "./welcome"
 import home from "./home"
+import friends from "./friends"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
 const userIDstring = window.sessionStorage.getItem("userID");
@@ -18,7 +19,7 @@ const domAppender = {
       domElement.removeChild(domElement.firstChild);
     }
   },
-//this is called to create the NavBar once the user is logged in.
+  //this is called to create the NavBar once the user is logged in.
   nav: {
     appendNav() {
       const navBar = document.querySelector("#output");
@@ -35,8 +36,6 @@ const domAppender = {
       mainContainer.appendChild(home.homePage());
 
     }
-
-
   },
   welcome: {
     // this is the initial function to load the DOM. it checks the session storage to see if a user is currently logged in, and if so, loads the home page, otherwise, it directs to the login page.
@@ -48,20 +47,20 @@ const domAppender = {
         let welcomePage = document.createElement("article");
         welcomePage.id = "welcome-page"
         welcomePage.appendChild(build.elementWithText("h1", "Welcome to Nutshell"));
-      welcomePage.appendChild(welcome.loginForm());
-      welcomePage.appendChild(welcome.newUser());
-      mainContainer.appendChild(welcomePage)
+        welcomePage.appendChild(welcome.loginForm());
+        welcomePage.appendChild(welcome.newUser());
+        mainContainer.appendChild(welcomePage)
+      }
+    },
+
+    //this is used by the registration event handler to create the DOM for a new user form.
+    createRegistration() {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+
+      mainContainer.appendChild(welcome.registerUserForm());
     }
-  },
-
-  //this is used by the registration event handler to create the DOM for a new user form.
-  createRegistration() {
-    while (mainContainer.firstChild) {
-      mainContainer.removeChild(mainContainer.firstChild);
-    };
-
-    mainContainer.appendChild(welcome.registerUserForm());
-  }
 
   },
   tasks: {
@@ -71,7 +70,7 @@ const domAppender = {
       };
       mainContainer.appendChild(this.appendTaskForm());
       mainContainer.appendChild(this.createTaskContainer());
-      
+
     },
     reloadDOM() {
       while (mainContainer.childNodes[1]) {
@@ -158,7 +157,7 @@ const domAppender = {
       buildDIV.appendChild(build.elementWithText("p", articlesSynopsis));
       buildDIV.appendChild(build.elementWithText("p", articlesUrl));
       buildDIV.appendChild(build.elementWithText("p", articlesTime));
-      
+
 
       const deleteButton = build.button(`delete--${articlesID}`, "Delete Article", "button");
       deleteButton.addEventListener("click", eventHandler.handleDeleteButton);
@@ -186,19 +185,30 @@ const domAppender = {
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
-      mainContainer.appendChild(messages.buildForm());
       mainContainer.appendChild(messages.listCards());
+      mainContainer.appendChild(messages.buildForm());
+
     },
     reloadDOM() {
       while (mainContainer.childNodes[1]) {
-        mainContainer.removeChild(mainContainer.childNodes[1]);
+        mainContainer.removeChild(mainContainer.firstChild);
       };
-      mainContainer.appendChild(messages.listCards());
+      let mesForm = document.querySelector("#messageForm")
+      mainContainer.insertBefore(messages.listCards(), mesForm)
     }
   },
   friends: {
     createDOM() {
-      console.log("friends")
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(friends.listCards());
+    },
+    reloadDOM() {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      };
+      mainContainer.appendChild(friends.listCards());
     }
   }
 };

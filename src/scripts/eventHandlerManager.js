@@ -142,7 +142,7 @@ const eventHandler = {
     let entryToPost = apiStructure.postMessage(messageName.value, time);
     fetch.postOne("messages", entryToPost).then(data => {
       messageName.value = "";
-      DOM.messages.reloadDOM()
+      DOM.messages.reloadDOM();
     })
   },
   handleLogin() {
@@ -153,6 +153,14 @@ const eventHandler = {
   },
   handleRegister() {
     welcome.createNewUser();
+  },
+  addFriendButton() {
+    let page = event.target.id.split("--")[0];
+    let friendID = event.target.id.split("--")[1];
+    let friendToPost = apiStructure.postFriend(friendID);
+    fetch.postOne(page, friendToPost).then(data => {
+      DOM.messages.reloadDOM();
+    })
   }
 }
 
