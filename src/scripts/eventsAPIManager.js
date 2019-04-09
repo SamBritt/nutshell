@@ -1,6 +1,5 @@
-
 export default {
-    postNewEvent (event) {
+    postNewEvent(event) {
         return fetch("http://localhost:8088/events", {
             method: "POST",
             headers: {
@@ -9,8 +8,17 @@ export default {
             body: JSON.stringify(event)
         })
     },
-    getAllEvents () {
-        return fetch("http://localhost:8088/events").then(response=>response.json())
+    getAllEvents() {
+        return fetch("http://localhost:8088/events").then(response => response.json())
 
+    },
+    editEvents() {
+        return fetch("http://localhost:8088/events", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(entry)
+        })
     }
 }

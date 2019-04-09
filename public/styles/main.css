@@ -167,4 +167,9 @@ fieldset {
 
 #messages-article .currentUser {
   align-self: flex-end;
+
+}
+
+.edit-form-is--hidden {
+  display: none
 }

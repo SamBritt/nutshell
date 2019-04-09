@@ -7,6 +7,8 @@ import eventHandler from "./eventHandlerManager"
 import welcome from "./welcome"
 import home from "./home"
 import friends from "./friends"
+import GET from "./eventsAPIManager"
+import list from "./listEvents"
 
 // organizes the DOM appender so that navigation can dynamically target specific pages and create them.
 const userIDstring = window.sessionStorage.getItem("userID");
@@ -178,8 +180,19 @@ const domAppender = {
         mainContainer.removeChild(mainContainer.firstChild);
       };
       mainContainer.appendChild(event.appendEventForm());
-    }
-  },
+      // TODO: append the events to the DOM, buddy
+      // GET.postNewEvent(newEvent)
+      // .then(() => list.listAllEvents())
+      // list.listAllEvents();
+      mainContainer.appendChild(list.listAllEvents())
+    },
+    reloadDOM() {
+      while (mainContainer.childNodes[1]) {
+        mainContainer.removeChild(mainContainer.childNodes[1]);
+      };
+      mainContainer.appendChild(list.listAllEvents());
+  }
+},
   messages: {
     createDOM() {
       while (mainContainer.firstChild) {

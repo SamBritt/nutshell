@@ -10,6 +10,9 @@ const eventsAppender = {
         eventSection.appendChild(buildEventForm.buildEventButton());
         eventSection.appendChild(buildEventForm.buildEventForm());
         return eventSection;
+    },
+    appendEditEventForm () {
+        
     }
 
 };
