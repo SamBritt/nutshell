@@ -35,24 +35,57 @@ const buildEventFormHTML = {
         const createEventSaveButton = buildHTML.buttonCreator("saveEvent", "Save Event", undefined)
         // Event listener console logs 'this will save your event' when clicked to demonstrate that it works. Event handler has yet to be added.
         createEventSaveButton.addEventListener("click", handlers.saveEventHandler)
-        form.append(createEventSaveButton)
+        form.append(createEventSaveButton);
+
         return form
     },
-    buildEventComponent(newEvent){
-        const section = buildHTML.elementWithTextCreator("section", undefined, `eventSection--${newEvent.id}`);
-        const nameH1 = buildHTML.elementWithTextCreator("h1", `${newEvent.name}`);
+    buildEventComponent(eventObject) {
+        const section = buildHTML.elementWithTextCreator("section", undefined, `eventSection--${eventObject.id}`);
+        const nameH1 = buildHTML.elementWithTextCreator("h1", `${eventObject.name}`);
         const eventLocationLabel = buildHTML.elementWithTextCreator("label", "Event Location: ", undefined, undefined);
         const eventDateLabel = buildHTML.elementWithTextCreator("label", "Date: ", undefined, undefined);
-        const eventLocation = buildHTML.elementWithTextCreator("p", `${newEvent.location}`)
-        const dateDiv = buildHTML.elementWithTextCreator("div", `${newEvent.date}`);
+        const eventLocation = buildHTML.elementWithTextCreator("p", `${eventObject.location}`)
+        const dateDiv = buildHTML.elementWithTextCreator("div", `${eventObject.date}`);
+        const eventEditButton = buildHTML.buttonCreator(`editForm--${eventObject.id}`, "Edit Event", undefined);
+        eventEditButton.addEventListener("click", handlers.editEventHandler)
+
         eventLocationLabel.appendChild(eventLocation);
         eventDateLabel.appendChild(dateDiv);
         section.appendChild(nameH1);
         section.appendChild(eventDateLabel);
         section.appendChild(eventLocationLabel);
-    
+        section.append(eventEditButton)
+
         return section;
 
+    },
+    buildEditEventForm(editedEvent) {
+        const editForm = buildHTML.elementWithTextCreator("editForm", undefined, `editForm--${editedEvent.id}`, undefined);
+        editForm.className = "edit-form-is--hidden"
+
+        const createEventLabel = buildHTML.elementWithTextCreator("label", "Event Name: ", undefined, undefined);
+        console.log(createEventLabel)
+        editForm.append(createEventLabel)
+
+        const newEventInput = buildHTML.inputCreator("text", "newEvent");
+        editForm.append(newEventInput)
+
+        const createEventDateLabel = buildHTML.elementWithTextCreator("label", "Date: ", undefined, undefined);
+        editForm.append(createEventDateLabel);
+        const eventDateInput = buildHTML.inputCreator("date", "newEventDate");
+        editForm.append(eventDateInput);
+
+        const createEventLocationLabel = buildHTML.elementWithTextCreator("label", "Event Location: ", undefined, undefined);
+        editForm.append(createEventLocationLabel);
+
+        const eventLocationInput = buildHTML.inputCreator("text", "eventLocation");
+        editForm.append(eventLocationInput)
+
+        const saveEditedEvent = buildHTML.buttonCreator("saveEditedEvent", "Save", undefined)
+        saveEditedEvent.addEventListener("click", console.log("whooooo doggy"))
+        editForm.append(saveEditedEvent)
+
+        return editForm
     }
 
 
