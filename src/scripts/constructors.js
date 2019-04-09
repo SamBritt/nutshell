@@ -74,17 +74,21 @@ const constructors = {
     button.textContent = elementText;
 
     button.classList.add(elementClass);
-    button.classList.add("btn", "btn-primary");
+    button.classList.add("button");
     return button;
   },
 
-  fieldset(labelText, inputType, page) {
+  fieldset(labelText, inputType, page, value) {
     const formFieldSet = document.createElement("fieldset");
     formFieldSet.classList.add("form-group");
     formFieldSet.appendChild(
       this.elementWithText("label", `${labelText}: `)
     );
-    formFieldSet.appendChild(this.input(inputType, `${page}InputForm`, "form-control"));
+    const inputElement = this.input(inputType, `${page}InputForm`, "form-control");
+    if (value) {
+      inputElement.value = value;
+    }
+    formFieldSet.appendChild(inputElement);
 
     return formFieldSet;
   },

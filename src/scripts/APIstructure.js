@@ -4,7 +4,6 @@ const userIDstring = window.sessionStorage.getItem("userID");
 const userID = parseInt(userIDstring);
 
 const APIstructure = {
-
     //Function to create a repository for staging values of the data collected in the articles forms, so they can be posted to the JSON.
     postArticle(newsTitle, synopsis, timeStamp, url) {
         let articlesObject = {
@@ -27,10 +26,10 @@ const APIstructure = {
         return taskObject;
 
     },
-    postMessage(message) {
+    postMessage(message, time) {
         let messageObject = {
             "userId": userID,
-            "timestamp": "test",
+            "timeStamp": time,
             "message": message,
         }
         return messageObject;
@@ -41,7 +40,15 @@ const APIstructure = {
             "email": email
         }
         return userObject;
-    }
+    },
+    postFriend(friendID) {
+        let friendObject = {
+            "userId": userID,
+            "otherFriendId": parseInt(friendID)
+        }
+        return friendObject;
+    },
+
 }
 
 export default APIstructure

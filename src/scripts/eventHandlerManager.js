@@ -3,7 +3,8 @@ import apiStructure from "./apiStructure"
 import DOM from "./domAppender"
 import struct from "./domStructure";
 import welcome from "./welcome";
-import build from "./constructors"
+import build from "./constructors";
+import messages from "./messages"
 
 const userIDstring = window.sessionStorage.getItem("userID");
 const userID = parseInt(userIDstring);
@@ -96,7 +97,9 @@ const eventHandler = {
     fetch.deleteEntry(page, pageID)
       .then(data => {
         let page = document.querySelector("article").id.split("-")[0];
-        DOM[page].createDOM()
+        setTimeout(() => {
+          DOM[page].reloadDOM()
+        }, 500);
       });
   },
   //not used yet
@@ -127,13 +130,37 @@ const eventHandler = {
       DOM.articles.reloadDOM()
     })
   },
+
+    handleEditButton() {
+      let page = event.target.parentNode.parentNode.id.split("-")[0];
+      let pageID = event.target.id.split("--")[2];
+      let pageDivID = event.target.parentNode.id
+      fetch.getOneEntry(page, pageID)
+        .then(data => {
+        let pageDiv = document.querySelector(`#${pageDivID}`)
+        build.clearElement(pageDiv);
+        pageDiv.appendChild(messages.editForm(data));
+        });
+    },
+  messageEditSubmit() {
+    let messageName = document.querySelector("#editMessageInputForm");
+    let editPageID = event.target.parentNode.id.split("--")[1];
+    let time = new Date();
+    let entryToPost = apiStructure.postMessage(messageName.value, time);
+    fetch.editEntry("messages", editPageID, entryToPost).then(() => {
+      DOM.messages.reloadDOM()
+
+  })
+  },
+
   handleMessageSubmit() {
 
     let messageName = document.querySelector("#messageInputForm");
-
-    let entryToPost = apiStructure.postMessage(messageName.value);
+    let time = new Date();
+    let entryToPost = apiStructure.postMessage(messageName.value, time);
     fetch.postOne("messages", entryToPost).then(data => {
-      DOM.messages.reloadDOM()
+      messageName.value = "";
+      DOM.messages.reloadDOM();
     })
   },
   handleLogin() {
@@ -144,6 +171,14 @@ const eventHandler = {
   },
   handleRegister() {
     welcome.createNewUser();
+  },
+  addFriendButton() {
+    let page = event.target.id.split("--")[0];
+    let friendID = event.target.id.split("--")[1];
+    let friendToPost = apiStructure.postFriend(friendID);
+    fetch.postOne(page, friendToPost).then(data => {
+      DOM.messages.reloadDOM();
+    })
   }
 }
 

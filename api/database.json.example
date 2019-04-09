@@ -9,68 +9,265 @@
       "id": 2,
       "userName": "Billy",
       "email": "greenbeer@gmail.com"
-    }    
+    },
+    {
+      "userName": "Rose",
+      "email": "test@gmail.com",
+      "id": 3
+    },
+    {
+      "userName": "Sam",
+      "email": "goog@gmail.com",
+      "id": 4
+    }
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": "1",
-      "timeStamp": "dunno",
-      "message": "hello fellas"
+      "userId": 1,
+      "timeStamp": "2019-04-05T20:25:40.309Z",
+      "message": "Is this the real life?",
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": "2",
-      "timeStamp": "dunno",
-      "message": "hello ladies"
+      "userId": 2,
+      "timeStamp": "2019-04-06T20:25:40.309Z",
+      "message": "Is this just fantasy?",
+      "id": 2
     },
     {
-      "id": 3,
-      "userId": "1",
-      "timeStamp": "dunno",
-      "message": "hello boys"
+      "userId": 3,
+      "timeStamp": "2019-04-07T20:25:40.309Z",
+      "message": "Caught in a landslide, no escape from reality",
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "timeStamp": "2019-04-09T00:03:07.526Z",
+      "message": "Open your eyes",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "timeStamp": "2019-04-09T00:05:55.526Z",
+      "message": "Look up to the skies, and see",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-09T00:05:56.526Z",
+      "message": "I'm just a poor boy, I need no sympathy",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "timeStamp": "2019-04-09T00:05:57.526Z",
+      "message": "Because I'm easy come, easy go, a little high, little low",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "timeStamp": "2019-04-09T00:05:58.526Z",
+      "message": "Anyway the wind blows, doesn't really matter to me",
+      "id": 8
     }
   ],
   "articles": [
     {
       "id": 1,
-      "userId": "1",
+      "userId": 1,
       "newsTitle": "some",
       "synopsis": "impotant",
-      "timeStamp": "",
+      "timeStamp": "2019-04-08T21:00:41.658Z",
       "url": "www.time.com"
+    },
+    {
+      "userId": 2,
+      "newsTitle": "It was a ",
+      "synopsis": "long time ago.",
+      "timeStamp": "2019-04-08T21:00:41.658Z",
+      "url": "www.aol.com",
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "newsTitle": "Important Things",
+      "synopsis": "Secrets",
+      "timeStamp": "2019-04-08T20:53:54.244Z",
+      "url": "www.yopro.com",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "newsTitle": "hello",
+      "synopsis": "there",
+      "timeStamp": "2019-04-09T14:40:53.417Z",
+      "url": "mye",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "newsTitle": "yo",
+      "synopsis": "hello",
+      "timeStamp": "2019-04-09T15:13:30.693Z",
+      "url": "www.killa.com",
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "newsTitle": "yo",
+      "synopsis": "hello",
+      "timeStamp": "2019-04-09T15:13:42.519Z",
+      "url": "www.killa.com",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "newsTitle": "news",
+      "synopsis": "there",
+      "timeStamp": "2019-04-09T15:16:16.973Z",
+      "url": "it is",
+      "id": 7
     }
   ],
   "friends": [
     {
       "id": 1,
-      "userId": "1",
-      "otherFriendId": "2"
+      "userId": 1,
+      "otherFriendId": 2
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "otherFriendId": 3
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "otherFriendId": 4
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "otherFriendId": 3
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "otherFriendId": 2
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "otherFriendId": 1
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "otherFriendId": 2
+    },
+    {
+      "id": 10,
+      "userId": 3,
+      "otherFriendId": 4
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "userId": "1",
+      "userId": 1,
       "task": "homework",
       "completeDate": "2019-04-09",
       "complete": true
+    },
+    {
+      "userId": 2,
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "task": "sad",
+      "completeDate": "2019-04-12",
+      "complete": true,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "task": "hello",
+      "completeDate": "2019-04-04",
+      "complete": false,
+      "id": 5
     }
   ],
   "events": [
     {
       "id": 1,
-      "userId": "1",
+      "userId": 1,
       "name": "Airshow Concert",
       "date": "2019-04-09",
       "location": "Mercy Lounge"
     },
     {
       "id": 2,
-      "userId": "1",
+      "userId": 2,
       "name": "Moe Concert",
       "date": "2019-04-21",
       "location": "Marathon Music Works"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "name": "Phish Concert",
+      "date": "2019-04-09",
+      "location": "Mercy Lounge"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "name": "Greensky Concert",
+      "date": "2019-04-21",
+      "location": "Marathon Music Works"
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "name": "Disco Show",
+      "date": "2019-04-09",
+      "location": "Mercy Lounge"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "Widespread Concert",
+      "date": "2019-04-21",
+      "location": "Marathon Music Works"
+    }
+  ],
+  "otherFriends": [
+    {
+      "id": 1,
+      "userName": "Brian"
+    },
+    {
+      "id": 2,
+      "userName": "Billy"
+    },
+    {
+      "userName": "Rose",
+      "id": 3
+    },
+    {
+      "userName": "Sam",
+      "id": 4
     }
   ]
 }

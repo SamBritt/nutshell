@@ -114,7 +114,7 @@ const domStructure = {
   },
   //Builds an HTML representation of key/values stored in JSON server. Returns the section to be used in domAppender.js
   buildTaskComponent(taskEntry) {
-    const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`);
+    const section = build.elementWithTextCreator("section", undefined, `taskSection--${taskEntry.id}`, "card");
     const nameH1 = build.elementWithTextCreator("h1", `${taskEntry.task}`);
     let taskCheckbox = build.inputCreator("checkbox", `editTask--${taskEntry.id}`)
     taskCheckbox.addEventListener("click", action.handleTaskCheckbox);
