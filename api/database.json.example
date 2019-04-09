@@ -95,6 +95,38 @@
       "timeStamp": "2019-04-08T20:53:54.244Z",
       "url": "www.yopro.com",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "newsTitle": "hello",
+      "synopsis": "there",
+      "timeStamp": "2019-04-09T14:40:53.417Z",
+      "url": "mye",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "newsTitle": "yo",
+      "synopsis": "hello",
+      "timeStamp": "2019-04-09T15:13:30.693Z",
+      "url": "www.killa.com",
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "newsTitle": "yo",
+      "synopsis": "hello",
+      "timeStamp": "2019-04-09T15:13:42.519Z",
+      "url": "www.killa.com",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "newsTitle": "news",
+      "synopsis": "there",
+      "timeStamp": "2019-04-09T15:16:16.973Z",
+      "url": "it is",
+      "id": 7
     }
   ],
   "friends": [
@@ -155,18 +187,25 @@
       "id": 2
     },
     {
-      "userId": 2,
+      "userId": 3,
       "task": "sad",
       "completeDate": "2019-04-12",
       "complete": false,
       "id": 3
     },
     {
-      "userId": 2,
+      "userId": 4,
       "task": "sad",
       "completeDate": "2019-04-12",
       "complete": true,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "task": "hello",
+      "completeDate": "2019-04-04",
+      "complete": false,
+      "id": 5
     }
   ],
   "events": [
@@ -179,8 +218,36 @@
     },
     {
       "id": 2,
-      "userId": 1,
+      "userId": 2,
       "name": "Moe Concert",
+      "date": "2019-04-21",
+      "location": "Marathon Music Works"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "name": "Phish Concert",
+      "date": "2019-04-09",
+      "location": "Mercy Lounge"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "name": "Greensky Concert",
+      "date": "2019-04-21",
+      "location": "Marathon Music Works"
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "name": "Disco Show",
+      "date": "2019-04-09",
+      "location": "Mercy Lounge"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "Widespread Concert",
       "date": "2019-04-21",
       "location": "Marathon Music Works"
     }
