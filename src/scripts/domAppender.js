@@ -18,6 +18,7 @@ const domAppender = {
       domElement.removeChild(domElement.firstChild);
     }
   },
+//this is called to create the NavBar once the user is logged in.
   nav: {
     appendNav() {
       const navBar = document.querySelector("#output");
@@ -52,6 +53,8 @@ const domAppender = {
       mainContainer.appendChild(welcomePage)
     }
   },
+
+  //this is used by the registration event handler to create the DOM for a new user form.
   createRegistration() {
     while (mainContainer.firstChild) {
       mainContainer.removeChild(mainContainer.firstChild);
@@ -84,7 +87,7 @@ const domAppender = {
     //Creates a container for DOM elements to be displayed
     createTaskContainer() {
       // const taskSection = document.getElementById("tasks-section");
-      const article = build.elementWithTextCreator("article", undefined, "taskArticle")
+      const article = build.elementWithTextCreator("article", undefined, "taskArticle", "card-deck")
       // taskSection.appendChild(article);
       return article;
     },

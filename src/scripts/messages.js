@@ -12,8 +12,15 @@ const messages = {
     formArticle.classList.add("card-deck")
     formArticle.id = "messages-article";
     fetch.getAll("messages?_expand=user").then(messages => {
+      const sortMessages = (objectArray) => {
+        return objectArray.sort(function(a, b){
+          return new Date(b.timeStamp) - new Date(a.timeStamp);
+        });
+      }
+      const sortedMessages = sortMessages(messages).slice(0,5);
+      console.log(sortedMessages);
       let docFrag = document.createDocumentFragment();
-      messages.forEach(messageObject => {
+      sortedMessages.forEach(messageObject => {
         docFrag.appendChild(this.postToDOM(messageObject));
   
       }); formArticle.appendChild(docFrag)
@@ -22,7 +29,7 @@ const messages = {
   },
 
   //builds the input form for creating a new message, does not currently post to API or DOM
-    buildForm(value) {
+    buildForm() {
     const form = build.elementWithText("form", "", "messageForm", "inputForm");
 
     form.appendChild(build.fieldset("Enter a message", "text", "message"));
@@ -33,9 +40,8 @@ const messages = {
 
     return form;
 },
+//creates edit form within the message card on the DOM
     editForm(messageObject) {
-      const messageTime = messageObject.timeStamp;
-      const messageUser = messageObject.userId;
       const messageText = messageObject.message;
       const messageID = `messageEdit--${messageObject.id}`;
 
@@ -53,25 +59,24 @@ postToDOM (messageObject) {
   const messageTime = messageObject.timeStamp;
   const messageUser = messageObject.user.userName;
   const messageText = messageObject.message;
-
   const messageID = `messageCard--${messageObject.id}`;
 
   const buildDIV = build.elementWithText("div", "", messageID, "card");
 
   buildDIV.appendChild(build.elementWithText("h4", messageUser));
 
-  buildDIV.appendChild(build.elementWithText("p", messageTime));
-
   buildDIV.appendChild(build.elementWithText("p", messageText));
 
-  const deleteButton = build.button(`delete--${messageID}`, "Delete message", "button");
-  deleteButton.addEventListener("click", action.handleDeleteButton);
- buildDIV.appendChild(deleteButton);
+//   const deleteButton = build.button(`delete--${messageID}`, "Delete message", "button");
+//   deleteButton.addEventListener("click", action.handleDeleteButton);
+//  buildDIV.appendChild(deleteButton);
 
   const editButton = build.button(`edit--${messageID}`, "Edit Entry", "button");
   editButton.addEventListener("click", action.handleEditButton);
+  if (window.sessionStorage.getItem("userName") === messageUser) {
   buildDIV.appendChild(editButton);
-
+  buildDIV.classList.add("currentUser");
+  }
   return buildDIV;
 
 }

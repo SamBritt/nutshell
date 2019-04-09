@@ -127,7 +127,8 @@ const eventHandler = {
   messageEditSubmit() {
     let messageName = document.querySelector("#editMessageInputForm");
     let editPageID = event.target.parentNode.id.split("--")[1];
-    let entryToPost = apiStructure.postMessage(messageName.value);
+    let time = new Date();
+    let entryToPost = apiStructure.postMessage(messageName.value, time);
     fetch.editEntry("messages", editPageID, entryToPost).then(() => {
       DOM.messages.reloadDOM()
 
@@ -140,6 +141,7 @@ const eventHandler = {
     let time = new Date();
     let entryToPost = apiStructure.postMessage(messageName.value, time);
     fetch.postOne("messages", entryToPost).then(data => {
+      messageName.value = "";
       DOM.messages.reloadDOM()
     })
   },
