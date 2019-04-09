@@ -6,6 +6,9 @@ import welcome from "./welcome";
 import build from "./constructors";
 import messages from "./messages"
 
+const userIDstring = window.sessionStorage.getItem("userID");
+const userID = parseInt(userIDstring);
+
 const eventHandler = {
 
   //Function to capture the values of data entered into the forms when the submit button is pressed.
@@ -34,7 +37,7 @@ const eventHandler = {
     let taskDate = document.querySelector("#dateInputTask");
 
     let entryToPost = apiStructure.postTask(taskName.value, taskDate.value, false);
-    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
+    fetch.postOne("tasks", entryToPost).then(() => fetch.getAll(`users/${userID}/tasks`)).then(response => DOM.tasks.appendTasks(response))
   },
   handleTaskCheckbox() {
     let checkBoxId = event.target.id.split("--")[1];
@@ -42,7 +45,7 @@ const eventHandler = {
     let patchedTask = {
       "complete": true
     }
-    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response));
+    fetch.patchEntry("tasks", checkBoxId, patchedTask).then(() => fetch.getAll(`users/${userID}/tasks`)).then(response => DOM.tasks.appendTasks(response));
     console.log("Clicked")
   },
   //gets the task entry based off its id
@@ -72,7 +75,7 @@ const eventHandler = {
       "completeDate": taskDateToEdit.value
     }
 
-    fetch.patchEntry("tasks", taskTargetId, editTaskObj).then(() => fetch.getAll("tasks")).then(response => DOM.tasks.appendTasks(response))
+    fetch.patchEntry("tasks", taskTargetId, editTaskObj).then(() => fetch.getAll(`users/${userID}/tasks`)).then(response => DOM.tasks.appendTasks(response))
   },
   //this uses event delegation to check for the navigation links, and if the click lands on a navlink, it uses the ID of the element to run the DOM Appender function for the specified page.
   handleNavigation() {
