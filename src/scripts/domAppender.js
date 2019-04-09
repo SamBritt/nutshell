@@ -114,8 +114,11 @@ const domAppender = {
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
+      setTimeout(() => {
+    
       mainContainer.appendChild(this.appendArticlesForm());
       mainContainer.appendChild(this.listArticles());
+    }, 500);
     },
     reloadDOM() {
       while (mainContainer.childNodes[1]) {
@@ -198,10 +201,12 @@ const domAppender = {
       while (mainContainer.firstChild) {
         mainContainer.removeChild(mainContainer.firstChild);
       };
-      mainContainer.appendChild(messages.listCards());
-      mainContainer.appendChild(messages.buildForm());
+      setTimeout(() => {
 
-    },
+        mainContainer.appendChild(messages.listCards());
+        mainContainer.appendChild(messages.buildForm());
+      }, 500);
+      },
     reloadDOM() {
       while (mainContainer.childNodes[1]) {
         mainContainer.removeChild(mainContainer.firstChild);
