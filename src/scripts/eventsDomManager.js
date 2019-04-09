@@ -57,7 +57,6 @@ const buildEventFormHTML = {
         section.append(eventEditButton)
 
         return section;
-
     },
     buildEditEventForm(editedEvent) {
         const editForm = buildHTML.elementWithTextCreator("editForm", undefined, `editForm--${editedEvent.id}`, undefined);
@@ -67,18 +66,21 @@ const buildEventFormHTML = {
         console.log(createEventLabel)
         editForm.append(createEventLabel)
 
-        const newEventInput = buildHTML.inputCreator("text", "newEvent");
+        const newEventInput = buildHTML.inputCreator("text", `editEvent--${editedEvent.id}`);
+        newEventInput.value = `${editedEvent.name}`
         editForm.append(newEventInput)
 
         const createEventDateLabel = buildHTML.elementWithTextCreator("label", "Date: ", undefined, undefined);
         editForm.append(createEventDateLabel);
-        const eventDateInput = buildHTML.inputCreator("date", "newEventDate");
+        const eventDateInput = buildHTML.inputCreator("date", `editEventDate--${editedEvent.id}`);
+        eventDateInput.value = `${editedEvent.date}`
         editForm.append(eventDateInput);
 
         const createEventLocationLabel = buildHTML.elementWithTextCreator("label", "Event Location: ", undefined, undefined);
         editForm.append(createEventLocationLabel);
 
-        const eventLocationInput = buildHTML.inputCreator("text", "eventLocation");
+        const eventLocationInput = buildHTML.inputCreator("text", `editedEventLocation--${editedEvent.id}`);
+        eventLocationInput.value = `${editedEvent.location}`
         editForm.append(eventLocationInput)
 
         const saveEditedEvent = buildHTML.buttonCreator("saveEditedEvent", "Save", undefined)

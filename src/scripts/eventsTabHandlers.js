@@ -32,6 +32,7 @@ const eventsHandler = {
     editEventHandler() {
         let editFormSection = document.querySelector(".edit-form-is--hidden");
         editFormSection.classList.remove("edit-form-is--hidden")
+        
     }
 }
 
