@@ -152,3 +152,7 @@ fieldset {
   overflow: scroll;
   flex-direction: column-reverse;
 }
+
+.edit-form-is--hidden {
+  display: none
+}

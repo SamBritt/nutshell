@@ -6,6 +6,7 @@ export default {
     // This function lists the events from the database
     listAllEvents() {
         // Here we are calling the getAllEvents functions from the eventsAPIManager and chaining a .then from our original GET call
+        const eventListContainer = document.createElement("article")
         API.getAllEvents().then(eventResponse => {
             console.log("event response", eventResponse)
             const eventsFragment = document.createDocumentFragment();
@@ -13,11 +14,13 @@ export default {
             eventResponse.forEach((event) => {
                 const eventHTML = buildHTML.buildEventComponent(event)
                 eventsFragment.appendChild(eventHTML)
-
+                const editEventHTML = buildHTML.buildEditEventForm(event)
+                eventsFragment.appendChild(editEventHTML)
             })
+            eventListContainer.appendChild(eventsFragment)
             // Once our loop has completed, we are selecting the element with the id "events-section". Then we appending our document fragment that holds all of the HTML for our events and appends it to the DOM.
-            const eventsSection = document.querySelector("#events-section");
-            eventsSection.appendChild(eventsFragment)
+            
         })
+        return eventListContainer
     }
 }
