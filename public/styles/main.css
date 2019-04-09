@@ -3,7 +3,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
-ul {
+.navbar-nav {
   display: flex;
   justify-content: space-evenly;
 
@@ -44,12 +44,12 @@ a:hover {
 #main-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card-deck {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   margin: 10px 5%;
 
 }
@@ -141,6 +141,33 @@ fieldset {
 
 #homePageHeader {
   text-transform: capitalize;
+}
+
+.currentUser {
+  background-color: #C2E7DA;
+  
+}
+
+#messages-article {
+  flex-direction: column-reverse;
+  width: 1200px;
+  background-image: linear-gradient(#DBEEF9,  #29335C);
+}
+
+#messages-article .card {
+  margin: 10px 10%;
+  width: 600px;
+  border-radius: .4em;
+}
+
+
+#messageForm {
+  margin: 0 25%;
+}
+
+#messages-article .currentUser {
+  align-self: flex-end;
+
 }
 
 .edit-form-is--hidden {
